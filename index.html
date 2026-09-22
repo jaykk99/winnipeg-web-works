@@ -110,10 +110,13 @@
   <div class="container cta-final">
     <h2>Request your free audit</h2>
     <p class="sub">Only a handful of audit slots open each week. Grab yours.</p>
-    <form class="lead" id="lead-form">
+    <form class="lead" id="lead-form" action="https://formsubmit.co/ajax/jayomer1234@gmail.com" method="POST">
       <input type="text" name="name" placeholder="Your name" required>
       <input type="email" name="email" placeholder="Email address" required>
       <input type="url" name="website" placeholder="Your website (optional)">
+      <input type="hidden" name="_subject" value="🔍 New audit request — Winnipeg Web Works">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
       <button class="btn" type="submit">Request My Free Audit</button>
     </form>
     <div id="form-msg"></div>
@@ -127,9 +130,6 @@
 </footer>
 
 <script>
-const SUPABASE_URL = "https://fhbqxujlnqlmzvulrdxt.supabase.co";
-const SUPABASE_ANON_KEY = "PASTE_ANON_KEY_HERE";
-
 document.getElementById("lead-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const f = e.target;
@@ -137,18 +137,16 @@ document.getElementById("lead-form").addEventListener("submit", async (e) => {
   const btn = f.querySelector("button");
   btn.disabled = true; btn.textContent = "Sending…";
   try {
-    const res = await fetch(SUPABASE_URL + "/rest/v1/leads", {
+    const res = await fetch(f.action, {
       method: "POST",
-      headers: {
-        "apikey": SUPABASE_ANON_KEY,
-        "Authorization": "Bearer " + SUPABASE_ANON_KEY,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal"
-      },
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
         name: f.name.value,
         email: f.email.value,
-        website: f.website.value || null
+        website: f.website.value || "",
+        _subject: f._subject.value,
+        _template: "table",
+        _honey: f._honey.value
       })
     });
     if (!res.ok) throw new Error("Request failed");
@@ -157,7 +155,7 @@ document.getElementById("lead-form").addEventListener("submit", async (e) => {
     f.reset();
   } catch (err) {
     msg.style.color = "#e63946";
-    msg.textContent = "Something went wrong — please try again.";
+    msg.textContent = "Something went wrong — please email us directly or try again.";
   }
   btn.disabled = false; btn.textContent = "Request My Free Audit";
 });
