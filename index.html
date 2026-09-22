@@ -4,46 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Winnipeg Web Works — Free 15-Minute Digital Audit</title>
-<meta name="description" content="Winnipeg Web Works finds the leaks in your digital presence. Book a free 15-minute audit and see exactly what your website and ads are costing you.">
+<meta name="description" content="Winnipeg Web Works finds the leaks in your digital presence. Request a free 15-minute audit and see exactly what your website and ads are costing you.">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:#1a1a2e; background:#fff; line-height:1.6; }
   .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-
   header { display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
   .logo { font-size:1.4rem; font-weight:800; color:#1a1a2e; }
   .logo span { color:#e63946; }
   .btn { display:inline-block; background:#e63946; color:#fff; padding:14px 32px; border-radius:8px; font-weight:700; text-decoration:none; font-size:1.05rem; border:none; cursor:pointer; }
   .btn:hover { background:#c1121f; }
-
   .hero { padding:90px 0 70px; text-align:center; background:linear-gradient(180deg,#f8f9fa 0%,#fff 100%); }
   .hero h1 { font-size:3rem; line-height:1.15; margin-bottom:20px; }
   .hero h1 em { color:#e63946; font-style:normal; }
   .hero p { font-size:1.25rem; color:#555; max-width:640px; margin:0 auto 36px; }
   .trust { margin-top:18px; font-size:.9rem; color:#888; }
-
   section { padding:70px 0; }
   h2 { font-size:2.1rem; text-align:center; margin-bottom:14px; }
   .sub { text-align:center; color:#666; max-width:620px; margin:0 auto 50px; }
-
   .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
   .card { background:#f8f9fa; border-radius:14px; padding:34px 28px; }
   .card h3 { font-size:1.25rem; margin-bottom:10px; }
   .card .icon { font-size:2rem; margin-bottom:14px; }
   .card p { color:#555; font-size:.98rem; }
-
-  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; counter-reset:step; }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
   .step { text-align:center; padding:20px; }
   .step .num { width:52px; height:52px; border-radius:50%; background:#1a1a2e; color:#fff; font-weight:800; font-size:1.3rem; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
-
   .alt { background:#1a1a2e; color:#fff; }
   .alt h2, .alt .sub { color:#fff; }
   .alt .sub { color:#aab; }
-
   .cta-final { text-align:center; }
-
-  form.lead { max-width:480px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
-  form.lead input { padding:14px 16px; border-radius:8px; border:1px solid #ccc; font-size:1rem; }
+  form.lead { max-width:480px; margin:0 auto; display:flex; flex-direction:column; gap:14px; text-align:left; }
+  form.lead input { padding:14px 16px; border-radius:8px; border:1px solid #ccc; font-size:1rem; width:100%; }
+  #form-msg { text-align:center; font-weight:600; margin-top:14px; min-height:1.4em; }
   footer { padding:36px 0; text-align:center; color:#888; font-size:.85rem; border-top:1px solid #eee; }
 </style>
 </head>
@@ -83,7 +76,7 @@
       <div class="card">
         <div class="icon">🔍</div>
         <h3>Your Visibility</h3>
-        <p>Google rankings, reviews, and listings. If you don't show up when someone searches &quot; near me,&quot; you don't exist.</p>
+        <p>Google rankings, reviews, and listings. If you don't show up when someone searches &quot;near me,&quot; you don't exist.</p>
       </div>
     </div>
   </div>
@@ -92,12 +85,12 @@
 <section class="alt">
   <div class="container">
     <h2>How it works</h2>
-    <p class="sub">From booking to answers in under 48 hours.</p>
+    <p class="sub">From request to answers in under 48 hours.</p>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
-        <h3>Book your call</h3>
-        <p>Pick a time that works. 15 minutes, no prep needed.</p>
+        <h3>Request your audit</h3>
+        <p>Drop your name and email below. We reply within one business day to book your 15-minute call.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
@@ -115,26 +108,60 @@
 
 <section id="book">
   <div class="container cta-final">
-    <h2>Book your free audit</h2>
+    <h2>Request your free audit</h2>
     <p class="sub">Only a handful of audit slots open each week. Grab yours.</p>
-    <!-- Replace YOUR_CALENDLY_LINK with the real Calendly URL -->
-    <p><a class="btn" href="https://calendly.com/YOUR_CALENDLY_LINK" target="_blank" rel="noopener">Pick a Time on Calendly →</a></p>
-    <p style="margin:44px 0 10px; color:#666;">Or leave your info and we'll reach out:</p>
-    <!-- Replace action with your form webhook (Formspree / Make / Zapier) -->
-    <form class="lead" action="YOUR_FORM_WEBHOOK" method="POST">
+    <form class="lead" id="lead-form">
       <input type="text" name="name" placeholder="Your name" required>
       <input type="email" name="email" placeholder="Email address" required>
       <input type="url" name="website" placeholder="Your website (optional)">
-      <button class="btn" type="submit">Request My Audit</button>
+      <button class="btn" type="submit">Request My Free Audit</button>
     </form>
+    <div id="form-msg"></div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    © 2026 Winnipeg Web Works · Winnipeg, Manitoba · winnipegwebworks@gmail.com
+    © 2026 Winnipeg Web Works · Winnipeg, Manitoba
   </div>
 </footer>
+
+<script>
+const SUPABASE_URL = "https://fhbqxujlnqlmzvulrdxt.supabase.co";
+const SUPABASE_ANON_KEY = "PASTE_ANON_KEY_HERE";
+
+document.getElementById("lead-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const f = e.target;
+  const msg = document.getElementById("form-msg");
+  const btn = f.querySelector("button");
+  btn.disabled = true; btn.textContent = "Sending…";
+  try {
+    const res = await fetch(SUPABASE_URL + "/rest/v1/leads", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": "Bearer " + SUPABASE_ANON_KEY,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({
+        name: f.name.value,
+        email: f.email.value,
+        website: f.website.value || null
+      })
+    });
+    if (!res.ok) throw new Error("Request failed");
+    msg.style.color = "#2a9d8f";
+    msg.textContent = "✓ Got it! We'll email you within one business day to book your audit call.";
+    f.reset();
+  } catch (err) {
+    msg.style.color = "#e63946";
+    msg.textContent = "Something went wrong — please try again.";
+  }
+  btn.disabled = false; btn.textContent = "Request My Free Audit";
+});
+</script>
 
 </body>
 </html>
