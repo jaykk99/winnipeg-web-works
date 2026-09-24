@@ -151,9 +151,10 @@
     <p>Winnipeg Web Works audits your website, ads, and online presence — then hands you a plain-English report of what's broken and what it's costing you. Free. 15 minutes.</p>
     <div class="hero-ctas">
       <a class="btn" href="#book">Get My Free 15-Min Audit</a>
-      <a class="btn-outline" href="#faq">See how it works</a>
+      <button class="btn-outline" id="talk-ai-btn" type="button">🎙️ Talk to our AI now</button>
     </div>
     <div class="trust">✓ Winnipeg-owned &nbsp;·&nbsp; ✓ No cost, no card required &nbsp;·&nbsp; ✓ Report in 24 hours</div>
+    <p class="form-note" style="margin-top:14px;">Prefer to talk it through? Click <strong>Talk to our AI now</strong> and our audit assistant will walk you through it live — no waiting for a callback.</p>
   </div>
 </div>
 
@@ -283,6 +284,21 @@
   <span>Free 15-min audit, no cost</span>
   <a class="btn" href="#book">Book now</a>
 </div>
+
+<!-- ElevenLabs Conversational AI widget — free live audit chat/voice -->
+<elevenlabs-convai agent-id="agent_4801m3a3kqw1e7dswfbhrw252fmd"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<script>
+document.getElementById("talk-ai-btn").addEventListener("click", () => {
+  const widget = document.querySelector("elevenlabs-convai");
+  if (widget && typeof widget.startCall === "function") {
+    widget.startCall();
+  } else if (widget) {
+    widget.setAttribute("override-open", "true");
+    widget.click();
+  }
+});
+</script>
 
 <script>
 document.getElementById("lead-form").addEventListener("submit", async (e) => {
