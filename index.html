@@ -3,10 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winnipeg Web Works — Free 15-Minute Digital Audit</title>
-<meta name="description" content="Winnipeg Web Works finds the leaks in your digital presence. Request a free 15-minute audit and see exactly what your website and ads are costing you.">
+<title>Winnipeg Web Works — Free 15-Minute Digital Audit for Winnipeg Businesses</title>
+<meta name="description" content="Winnipeg Web Works finds the leaks in your digital presence. Request a free 15-minute audit and see exactly what your website, ads, and Google visibility are costing you.">
+<link rel="canonical" href="https://winnipeg-web-works.vercel.app/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#e63946">
+
+<!-- Open Graph / social share preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://winnipeg-web-works.vercel.app/">
+<meta property="og:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
+<meta property="og:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours. Winnipeg-owned.">
+<meta property="og:locale" content="en_CA">
+<meta property="og:site_name" content="Winnipeg Web Works">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
+<meta name="twitter:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours.">
+
+<!-- Favicon: simple inline "W" mark, no external request -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1a2e'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='800' fill='%23e63946' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+
+<!-- Structured data so Google understands this is a local Winnipeg business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Winnipeg Web Works",
+  "url": "https://winnipeg-web-works.vercel.app/",
+  "email": "winnipegwebworks@gmail.com",
+  "description": "Free 15-minute digital audits of website, ads, and Google visibility for Winnipeg businesses.",
+  "areaServed": {
+    "@type": "City",
+    "name": "Winnipeg"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Winnipeg",
+    "addressRegion": "MB",
+    "addressCountry": "CA"
+  },
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "Free 15-Minute Digital Audit",
+    "price": "0",
+    "priceCurrency": "CAD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the audit actually free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. No cost and no card required. The 15-minute call and the written report are free, whether or not you ever work with us again." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the catch?",
+      "acceptedAnswer": { "@type": "Answer", "text": "None. We're a new Winnipeg-owned shop building relationships with local businesses. Some audits turn into paid work fixing what we find — most just get a useful, honest report to keep." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to sign anything or give payment info?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Just your name and email to book the call. No contract, no card." }
+    },
+    {
+      "@type": "Question",
+      "name": "What exactly do you look at?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for 'near me' searches)." }
+    }
+  ]
+}
+</script>
+
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
   body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:#1a1a2e; background:#fff; line-height:1.6; }
   .container { max-width:1100px; margin:0 auto; padding:0 24px; }
   header { display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
@@ -14,10 +89,13 @@
   .logo span { color:#e63946; }
   .btn { display:inline-block; background:#e63946; color:#fff; padding:14px 32px; border-radius:8px; font-weight:700; text-decoration:none; font-size:1.05rem; border:none; cursor:pointer; }
   .btn:hover { background:#c1121f; }
+  .btn-outline { display:inline-block; background:transparent; color:#1a1a2e; padding:12px 28px; border-radius:8px; font-weight:700; text-decoration:none; font-size:1rem; border:2px solid #1a1a2e; }
+  .btn-outline:hover { background:#1a1a2e; color:#fff; }
   .hero { padding:90px 0 70px; text-align:center; background:linear-gradient(180deg,#f8f9fa 0%,#fff 100%); }
   .hero h1 { font-size:3rem; line-height:1.15; margin-bottom:20px; }
   .hero h1 em { color:#e63946; font-style:normal; }
   .hero p { font-size:1.25rem; color:#555; max-width:640px; margin:0 auto 36px; }
+  .hero-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
   .trust { margin-top:18px; font-size:.9rem; color:#888; }
   section { padding:70px 0; }
   h2 { font-size:2.1rem; text-align:center; margin-bottom:14px; }
@@ -33,11 +111,29 @@
   .alt { background:#1a1a2e; color:#fff; }
   .alt h2, .alt .sub { color:#fff; }
   .alt .sub { color:#aab; }
+  .faq { max-width:760px; margin:0 auto; }
+  .faq-item { border-bottom:1px solid #eee; padding:20px 0; }
+  .faq-item h3 { font-size:1.1rem; margin-bottom:8px; }
+  .faq-item p { color:#555; font-size:.98rem; }
   .cta-final { text-align:center; }
   form.lead { max-width:480px; margin:0 auto; display:flex; flex-direction:column; gap:14px; text-align:left; }
   form.lead input { padding:14px 16px; border-radius:8px; border:1px solid #ccc; font-size:1rem; width:100%; }
+  form.lead input:focus { outline:2px solid #e63946; outline-offset:1px; }
+  .form-note { text-align:center; color:#888; font-size:.85rem; margin-top:12px; }
   #form-msg { text-align:center; font-weight:600; margin-top:14px; min-height:1.4em; }
-  footer { padding:36px 0; text-align:center; color:#888; font-size:.85rem; border-top:1px solid #eee; }
+  footer { padding:36px 0 90px; text-align:center; color:#888; font-size:.85rem; border-top:1px solid #eee; }
+  footer a { color:#888; }
+  .sticky-cta { position:fixed; bottom:0; left:0; right:0; background:#1a1a2e; padding:12px 16px; display:none; align-items:center; justify-content:space-between; gap:12px; z-index:50; }
+  .sticky-cta span { color:#fff; font-size:.9rem; font-weight:600; }
+  .sticky-cta .btn { padding:10px 20px; font-size:.95rem; white-space:nowrap; }
+  @media (max-width:640px) {
+    .hero { padding:60px 0 50px; }
+    .hero h1 { font-size:2.1rem; }
+    .hero p { font-size:1.05rem; }
+    h2 { font-size:1.6rem; }
+    .sticky-cta { display:flex; }
+    footer { padding-bottom:100px; }
+  }
 </style>
 </head>
 <body>
@@ -53,8 +149,11 @@
   <div class="container">
     <h1>Your website is <em>losing you money.</em><br>We'll show you exactly where.</h1>
     <p>Winnipeg Web Works audits your website, ads, and online presence — then hands you a plain-English report of what's broken and what it's costing you. Free. 15 minutes.</p>
-    <a class="btn" href="#book">Get My Free 15-Min Audit</a>
-    <div class="trust">✓ Winnipeg-owned &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Report in 24 hours</div>
+    <div class="hero-ctas">
+      <a class="btn" href="#book">Get My Free 15-Min Audit</a>
+      <a class="btn-outline" href="#faq">See how it works</a>
+    </div>
+    <div class="trust">✓ Winnipeg-owned &nbsp;·&nbsp; ✓ No cost, no card required &nbsp;·&nbsp; ✓ Report in 24 hours</div>
   </div>
 </div>
 
@@ -82,7 +181,7 @@
   </div>
 </section>
 
-<section class="alt">
+<section class="alt" id="how">
   <div class="container">
     <h2>How it works</h2>
     <p class="sub">From request to answers in under 48 hours.</p>
@@ -106,6 +205,31 @@
   </div>
 </section>
 
+<section id="faq">
+  <div class="container">
+    <h2>Common questions</h2>
+    <p class="sub">Straight answers, no fine print.</p>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Is the audit actually free?</h3>
+        <p>Yes. No cost and no card required. The 15-minute call and the written report are free, whether or not you ever work with us again.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the catch?</h3>
+        <p>None. We're a new Winnipeg-owned shop building relationships with local businesses. Some audits turn into paid work fixing what we find — most just get a useful, honest report to keep.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need to sign anything or give payment info?</h3>
+        <p>No. Just your name and email to book the call. No contract, no card.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What exactly do you look at?</h3>
+        <p>Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for "near me" searches).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="book">
   <div class="container cta-final">
     <h2>Request your free audit</h2>
@@ -119,15 +243,21 @@
       <input type="text" name="_honey" style="display:none">
       <button class="btn" type="submit">Request My Free Audit</button>
     </form>
+    <p class="form-note">No cost, no card, no obligation. We reply within one business day.</p>
     <div id="form-msg"></div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    © 2026 Winnipeg Web Works · Winnipeg, Manitoba · winnipegwebworks@gmail.com
+    © 2026 Winnipeg Web Works · Winnipeg, Manitoba · <a href="mailto:winnipegwebworks@gmail.com">winnipegwebworks@gmail.com</a>
   </div>
 </footer>
+
+<div class="sticky-cta">
+  <span>Free 15-min audit, no cost</span>
+  <a class="btn" href="#book">Book now</a>
+</div>
 
 <script>
 document.getElementById("lead-form").addEventListener("submit", async (e) => {
