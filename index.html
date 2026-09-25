@@ -44,7 +44,8 @@
     { "@type": "Question", "name": "Is the audit actually free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. No cost and no card required. The 15-minute call and the written report are free, whether or not you ever work with us again." } },
     { "@type": "Question", "name": "Why does a website cost $2,500-$6,000? What am I actually paying for?", "acceptedAnswer": { "@type": "Answer", "text": "You're paying for a site built specifically to fix the leaks your audit found — fast load times, mobile-first design, clear calls to action — plus the strategy work, copywriting, and setup, not just a template. It's priced below typical Winnipeg agency rates." } },
     { "@type": "Question", "name": "Do I need to sign anything or give payment info for the audit?", "acceptedAnswer": { "@type": "Answer", "text": "No. Just your name and email to book the call. No contract, no card." } },
-    { "@type": "Question", "name": "What exactly do you look at in an audit?", "acceptedAnswer": { "@type": "Answer", "text": "Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for 'near me' searches)." } }
+    { "@type": "Question", "name": "What exactly do you look at in an audit?", "acceptedAnswer": { "@type": "Answer", "text": "Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for 'near me' searches)." } },
+    { "@type": "Question", "name": "What's the Digital Facelift?", "acceptedAnswer": { "@type": "Answer", "text": "A visual-only overhaul for a site or internal tool that already works but looks unfinished — same features and backend, new front-end and dashboard design, done in days without a rebuild." } }
   ]
 }
 </script>
@@ -87,6 +88,7 @@
   .trust-row .item { display:flex; align-items:center; gap:7px; }
   .trust-row svg { width:16px; height:16px; flex-shrink:0; color:var(--green); }
 
+  /* Hero visual: fake browser + audit score card */
   .hero-visual { position:relative; }
   .browser-mock { background:#fff; border-radius:14px; box-shadow:0 30px 60px -20px rgba(26,26,46,.25), 0 4px 12px rgba(26,26,46,.08); border:1px solid var(--line); overflow:hidden; }
   .browser-bar { display:flex; align-items:center; gap:6px; padding:11px 14px; background:var(--bg-soft); border-bottom:1px solid var(--line); }
@@ -108,6 +110,7 @@
   .sub { text-align:center; color:var(--text-dim); max-width:620px; margin:0 auto 50px; font-size:1.05rem; }
   .eyebrow { text-align:center; color:var(--red); font-weight:700; font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
 
+  /* What we do — explainer band */
   .explainer { background:var(--bg-soft); }
   .explain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff; }
   .explain-col { padding:34px 28px; border-right:1px solid var(--line); position:relative; }
@@ -115,6 +118,7 @@
   .explain-col .step-n { width:30px; height:30px; border-radius:8px; background:var(--ink); color:#fff; font-weight:800; font-size:.9rem; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
   .explain-col h3 { font-size:1.1rem; margin-bottom:8px; }
   .explain-col p { color:var(--text-dim); font-size:.95rem; }
+  .explain-arrow { display:none; }
 
   .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:32px 26px; transition:box-shadow .15s ease, transform .15s ease; }
@@ -124,6 +128,7 @@
   .card h3 { font-size:1.2rem; margin-bottom:10px; }
   .card p { color:var(--text-dim); font-size:.97rem; }
 
+  /* ROI / why it's worth it */
   .roi { background:var(--ink); color:#fff; }
   .roi h2, .roi .sub, .roi .eyebrow { color:#fff; }
   .roi .sub { color:#aeb0c9; }
@@ -145,7 +150,7 @@
   .step .num { width:52px; height:52px; border-radius:50%; background:var(--ink); color:#fff; font-weight:800; font-size:1.3rem; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
   .alt { background:var(--bg-soft); }
 
-  .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .pricing-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
   .price-card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:32px 26px; display:flex; flex-direction:column; }
   .price-card.feat { border-color:var(--red); box-shadow:0 20px 44px -18px rgba(230,57,70,.35); position:relative; }
   .price-card.feat .tag { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--red); color:#fff; font-size:.75rem; font-weight:800; padding:5px 14px; border-radius:999px; white-space:nowrap; }
@@ -176,6 +181,9 @@
   .sticky-cta span { color:#fff; font-size:.88rem; font-weight:600; }
   .sticky-cta .btn { padding:10px 20px; font-size:.92rem; white-space:nowrap; box-shadow:none; }
 
+  @media (max-width:1100px) {
+    .pricing-grid { grid-template-columns:repeat(2,1fr); }
+  }
   @media (max-width:900px) {
     .hero-grid { grid-template-columns:1fr; }
     .hero-visual { order:-1; max-width:420px; margin:0 auto 20px; }
@@ -355,6 +363,16 @@
     <p class="sub">The audit is free and always will be — here's exactly what it costs to fix what it finds.</p>
     <div class="pricing-grid">
       <div class="price-card">
+        <h3>The Digital Facelift</h3>
+        <div class="price">$900&ndash;$2,000</div>
+        <p class="desc">Already have a site or an internal tool? Keep everything it does &mdash; we just make it look like a business worth paying more. Front end and back end both get the glow-up.</p>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Visual redesign, same functionality</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Dashboards &amp; admin tools polished too</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Days, not weeks &mdash; no rebuild needed</li>
+        </ul>
+      </div>
+      <div class="price-card">
         <h3>Website Build</h3>
         <div class="price">$2,500&ndash;$6,000</div>
         <p class="desc">A fast, mobile-first site built around the exact leaks your audit found — not a template.</p>
@@ -414,6 +432,10 @@
       <div class="faq-item">
         <h3>What exactly do you look at?</h3>
         <p>Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for "near me" searches).</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the Digital Facelift, and how's it different from a full rebuild?</h3>
+        <p>Some sites (and internal tools like dashboards or admin panels) work fine — they just look unfinished, and that costs you trust before a customer reads a word. The Facelift is a visual-only overhaul: same pages, same features, same backend, just built to look like a business people want to pay more. No rebuild, no downtime, done in days. If your audit turns up real functional problems, we'll tell you honestly and point you at the Website Build instead.</p>
       </div>
     </div>
   </div>
