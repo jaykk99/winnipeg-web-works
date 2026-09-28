@@ -16,7 +16,13 @@
 <meta property="og:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours. Winnipeg-owned.">
 <meta property="og:locale" content="en_CA">
 <meta property="og:site_name" content="Winnipeg Web Works">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://winnipeg-web-works.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Winnipeg Web Works — We Find Where Your Website Is Losing You Customers. Free 15-min audit, report in 24h.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://winnipeg-web-works.vercel.app/og-image.png">
+<meta name="twitter:image:alt" content="Winnipeg Web Works — We Find Where Your Website Is Losing You Customers. Free 15-min audit, report in 24h.">
 <meta name="twitter:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
 <meta name="twitter:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours.">
 
@@ -481,6 +487,10 @@ document.getElementById("talk-ai-btn").addEventListener("click", () => {
   } else if (widget) {
     widget.setAttribute("override-open", "true");
     widget.click();
+  } else {
+    // Conversational AI widget unavailable (blocked CDN or ad-blocker) —
+    // degrade gracefully to the booking form instead of a dead button.
+    document.getElementById("book").scrollIntoView({ behavior: "smooth" });
   }
 });
 
