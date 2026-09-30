@@ -26,7 +26,8 @@
 <meta name="twitter:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
 <meta name="twitter:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours.">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1a2e'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='800' fill='%23e63946' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <script type="application/ld+json">
 {
@@ -191,8 +192,8 @@
     .pricing-grid { grid-template-columns:repeat(2,1fr); }
   }
   @media (max-width:900px) {
-    .hero-grid { grid-template-columns:1fr; }
-    .hero-visual { order:-1; max-width:420px; margin:0 auto 20px; }
+    .hero-grid { grid-template-columns:1fr; gap:36px; }
+    .hero-visual { order:-1; max-width:420px; margin:0 auto; }
     .explain-grid { grid-template-columns:1fr; }
     .explain-col { border-right:none; border-bottom:1px solid var(--line); }
     .explain-col:last-child { border-bottom:none; }
@@ -200,9 +201,12 @@
     .pricing-grid { grid-template-columns:1fr; }
   }
   @media (max-width:640px) {
-    .hero { padding:40px 0 30px; }
-    .hero h1 { font-size:2.1rem; }
-    .hero p.lead-text { font-size:1.05rem; }
+    .hero { padding:36px 0 28px; }
+    .hero-grid { gap:28px; }
+    .badge { margin-bottom:16px; }
+    .hero h1 { font-size:2.1rem; margin-bottom:16px; }
+    .hero p.lead-text { font-size:1.05rem; margin-bottom:24px; }
+    .hero-ctas { margin-bottom:18px; }
     h2 { font-size:1.6rem; }
     section { padding:56px 0; }
     .sticky-cta { display:flex; }
