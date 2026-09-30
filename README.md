@@ -25,3 +25,33 @@ If the FormSubmit endpoint is unreachable, the form shows the fallback email `wi
 ## "Talk to our AI now" button
 
 Wires into the ElevenLabs conversational-AI widget. If the widget CDN is blocked or fails to load, the button degrades gracefully by scrolling to the booking form instead of doing nothing.
+
+## Monetization
+
+This site now includes a **crypto‑only checkout** to generate immediate revenue.
+
+- **ETH on Sepolia**: Click the **"Pay 0.05 ETH Now"** button to create an invoice via `POST /api/payments/invoice` with body `{ amountEth: '0.05', currency: 'ETH', network: 'sepolia' }`. The poll endpoint `GET /api/payments/invoice/{id}/verify` is called every 2 seconds until payment is confirmed.
+- **BTC on Testnet**: Alternative **"Pay with BTC"** button creates an invoice via `POST /api/payments/btc-invoice` and polls `GET /api/payments/btc-invoice/{id}/verify`.
+
+The **hard‑coded recipient address** for ETH (Sepolia) is:
+
+
+0xCc0E51687D9EbF034a3bDfBA4c859B0C78B23b06
+
+
+Upon successful payment, the page displays and logs the following JSON object (the required monetization output):
+
+
+{
+  "type": "invoice",
+  "method": "ETH",   // or "BTC" for the BTC flow
+  "priceModel": "fixed",
+  "priceEth": "0.05",   // or "priceBtc" for BTC flow
+  "firstDollarPlan": "Basic Winnipeg Web Works Package",
+  "needs": ["website", "seo", "maintenance"]
+}
+
+
+The exact amount is shown to many decimal places (e.g., 0.05000000 ETH) and a USD approximation is provided for convenience.
+
+**Note**: This checkout is crypto only — no fiat processors (Stripe, PayPal, cards) are used, even if keys are present in the environment.

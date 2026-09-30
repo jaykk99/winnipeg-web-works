@@ -1,539 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winnipeg Web Works — We Find Where Your Website Is Losing You Customers</title>
-<meta name="description" content="Winnipeg Web Works audits your website, ads, and Google visibility, then shows you exactly what's costing you customers — free 15-minute call, real report in 24 hours.">
-<link rel="canonical" href="https://winnipeg-web-works.vercel.app/">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#1a1a2e">
-
-<!-- Open Graph / social share preview -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://winnipeg-web-works.vercel.app/">
-<meta property="og:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
-<meta property="og:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours. Winnipeg-owned.">
-<meta property="og:locale" content="en_CA">
-<meta property="og:site_name" content="Winnipeg Web Works">
-<meta property="og:image" content="https://winnipeg-web-works.vercel.app/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Winnipeg Web Works — We Find Where Your Website Is Losing You Customers. Free 15-min audit, report in 24h.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://winnipeg-web-works.vercel.app/og-image.png">
-<meta name="twitter:image:alt" content="Winnipeg Web Works — We Find Where Your Website Is Losing You Customers. Free 15-min audit, report in 24h.">
-<meta name="twitter:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
-<meta name="twitter:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours.">
-
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Winnipeg Web Works",
-  "url": "https://winnipeg-web-works.vercel.app/",
-  "email": "winnipegwebworks@gmail.com",
-  "description": "Website design, digital marketing, and free 15-minute digital audits for Winnipeg businesses.",
-  "areaServed": { "@type": "City", "name": "Winnipeg" },
-  "address": { "@type": "PostalAddress", "addressLocality": "Winnipeg", "addressRegion": "MB", "addressCountry": "CA" },
-  "makesOffer": { "@type": "Offer", "name": "Free 15-Minute Digital Audit", "price": "0", "priceCurrency": "CAD" }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "What does Winnipeg Web Works actually do?", "acceptedAnswer": { "@type": "Answer", "text": "We build and fix websites, and run ongoing marketing (SEO, social, ads) for Winnipeg small businesses. We start every relationship with a free audit that shows you exactly what's costing you customers before you spend a dollar." } },
-    { "@type": "Question", "name": "Is the audit actually free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. No cost and no card required. The 15-minute call and the written report are free, whether or not you ever work with us again." } },
-    { "@type": "Question", "name": "Why does a website cost $2,500-$6,000? What am I actually paying for?", "acceptedAnswer": { "@type": "Answer", "text": "You're paying for a site built specifically to fix the leaks your audit found — fast load times, mobile-first design, clear calls to action — plus the strategy work, copywriting, and setup, not just a template. It's priced below typical Winnipeg agency rates." } },
-    { "@type": "Question", "name": "Do I need to sign anything or give payment info for the audit?", "acceptedAnswer": { "@type": "Answer", "text": "No. Just your name and email to book the call. No contract, no card." } },
-    { "@type": "Question", "name": "What exactly do you look at in an audit?", "acceptedAnswer": { "@type": "Answer", "text": "Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for 'near me' searches)." } },
-    { "@type": "Question", "name": "What's the Digital Facelift?", "acceptedAnswer": { "@type": "Answer", "text": "A visual-only overhaul for a site or internal tool that already works but looks unfinished — same features and backend, new front-end and dashboard design, done in days without a rebuild." } }
-  ]
-}
-</script>
-
-<style>
-  :root{
-    --ink:#1a1a2e; --ink2:#252542; --red:#e63946; --red-deep:#c1121f;
-    --bg:#fff; --bg-soft:#f7f7fb; --line:#eceef3; --text-dim:#5a5f72;
-    --green:#2a9d5f; --radius:16px;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased; }
-  .container { max-width:1120px; margin:0 auto; padding:0 24px; }
-  a { color:inherit; }
-  img,svg { display:block; max-width:100%; }
-
-  header { display:flex; justify-content:space-between; align-items:center; padding:22px 0; position:sticky; top:0; background:rgba(255,255,255,.9); backdrop-filter:blur(8px); z-index:60; border-bottom:1px solid transparent; }
-  header.scrolled { border-bottom-color:var(--line); }
-  .logo { font-size:1.3rem; font-weight:800; letter-spacing:-.01em; display:flex; align-items:center; gap:9px; }
-  .logo .mark { width:34px; height:34px; border-radius:9px; background:var(--ink); color:var(--red); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.05rem; }
-  .logo span { color:var(--red); }
-
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--red); color:#fff; padding:14px 30px; border-radius:10px; font-weight:700; text-decoration:none; font-size:1rem; border:none; cursor:pointer; box-shadow:0 8px 20px -8px rgba(230,57,70,.55); transition:transform .15s ease, box-shadow .15s ease; }
-  .btn:hover { background:var(--red-deep); transform:translateY(-1px); box-shadow:0 10px 24px -8px rgba(230,57,70,.65); }
-  .btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#fff; color:var(--ink); padding:12px 26px; border-radius:10px; font-weight:700; text-decoration:none; font-size:.98rem; border:2px solid var(--ink); cursor:pointer; }
-  .btn-outline:hover { background:var(--ink); color:#fff; }
-  .btn-sm { padding:10px 18px; font-size:.9rem; }
-
-  .badge { display:inline-flex; align-items:center; gap:8px; background:#fff0f0; color:var(--red-deep); border:1px solid #ffd7d9; font-weight:700; font-size:.82rem; padding:7px 14px; border-radius:999px; margin-bottom:22px; }
-  .badge .dot { width:7px; height:7px; border-radius:50%; background:var(--red); }
-
-  .hero { padding:64px 0 40px; background:radial-gradient(1100px 480px at 50% -10%, #fdeceb 0%, #fff 60%); }
-  .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; }
-  .hero h1 { font-size:3.1rem; line-height:1.12; margin-bottom:20px; letter-spacing:-.02em; }
-  .hero h1 em { color:var(--red); font-style:normal; }
-  .hero p.lead-text { font-size:1.2rem; color:var(--text-dim); max-width:520px; margin-bottom:30px; }
-  .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:22px; }
-  .trust-row { display:flex; gap:20px; flex-wrap:wrap; font-size:.88rem; color:var(--text-dim); }
-  .trust-row .item { display:flex; align-items:center; gap:7px; }
-  .trust-row svg { width:16px; height:16px; flex-shrink:0; color:var(--green); }
-
-  /* Hero visual: fake browser + audit score card */
-  .hero-visual { position:relative; }
-  .browser-mock { background:#fff; border-radius:14px; box-shadow:0 30px 60px -20px rgba(26,26,46,.25), 0 4px 12px rgba(26,26,46,.08); border:1px solid var(--line); overflow:hidden; }
-  .browser-bar { display:flex; align-items:center; gap:6px; padding:11px 14px; background:var(--bg-soft); border-bottom:1px solid var(--line); }
-  .browser-bar .dot2 { width:9px; height:9px; border-radius:50%; background:#e0e2ea; }
-  .browser-bar .url { margin-left:10px; background:#fff; border:1px solid var(--line); border-radius:6px; padding:4px 10px; font-size:.72rem; color:var(--text-dim); flex:1; }
-  .browser-body { padding:22px; }
-  .fake-line { height:10px; border-radius:5px; background:var(--line); margin-bottom:10px; }
-  .score-card { position:absolute; bottom:-22px; left:-22px; background:#fff; border-radius:14px; box-shadow:0 24px 48px -16px rgba(26,26,46,.3); border:1px solid var(--line); padding:16px 18px; width:210px; }
-  .score-ring { width:52px; height:52px; border-radius:50%; background:conic-gradient(var(--red) 0deg 133deg, var(--line) 133deg 360deg); display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
-  .score-ring .inner { width:40px; height:40px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.85rem; }
-  .score-card .label { font-size:.72rem; color:var(--text-dim); font-weight:600; text-transform:uppercase; letter-spacing:.03em; margin-bottom:2px; }
-  .score-card .finding { font-size:.82rem; font-weight:700; color:var(--ink); }
-  .flag-card { position:absolute; top:-18px; right:-18px; background:var(--ink); color:#fff; border-radius:12px; padding:10px 14px; font-size:.78rem; font-weight:700; box-shadow:0 16px 32px -12px rgba(26,26,46,.5); display:flex; align-items:center; gap:8px; }
-  .flag-card .x { color:#ff8a8a; }
-
-  section { padding:80px 0; }
-  section.tight { padding:56px 0; }
-  h2 { font-size:2.15rem; text-align:center; margin-bottom:14px; letter-spacing:-.015em; }
-  .sub { text-align:center; color:var(--text-dim); max-width:620px; margin:0 auto 50px; font-size:1.05rem; }
-  .eyebrow { text-align:center; color:var(--red); font-weight:700; font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
-
-  /* What we do — explainer band */
-  .explainer { background:var(--bg-soft); }
-  .explain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff; }
-  .explain-col { padding:34px 28px; border-right:1px solid var(--line); position:relative; }
-  .explain-col:last-child { border-right:none; }
-  .explain-col .step-n { width:30px; height:30px; border-radius:8px; background:var(--ink); color:#fff; font-weight:800; font-size:.9rem; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-  .explain-col h3 { font-size:1.1rem; margin-bottom:8px; }
-  .explain-col p { color:var(--text-dim); font-size:.95rem; }
-  .explain-arrow { display:none; }
-
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
-  .card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:32px 26px; transition:box-shadow .15s ease, transform .15s ease; }
-  .card:hover { box-shadow:0 20px 40px -16px rgba(26,26,46,.14); transform:translateY(-2px); }
-  .card .icon-wrap { width:48px; height:48px; border-radius:12px; background:#fdeceb; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-  .card .icon-wrap svg { width:24px; height:24px; color:var(--red); }
-  .card h3 { font-size:1.2rem; margin-bottom:10px; }
-  .card p { color:var(--text-dim); font-size:.97rem; }
-
-  /* ROI / why it's worth it */
-  .roi { background:var(--ink); color:#fff; }
-  .roi h2, .roi .sub, .roi .eyebrow { color:#fff; }
-  .roi .sub { color:#aeb0c9; }
-  .roi-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-  .roi-math { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:30px; }
-  .roi-row { display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:.98rem; }
-  .roi-row:last-child { border-bottom:none; }
-  .roi-row .val { font-weight:800; font-size:1.1rem; }
-  .roi-row.total { padding-top:20px; }
-  .roi-row.total .val { color:#7ee8a8; font-size:1.4rem; }
-  .roi-copy h3 { font-size:1.5rem; margin-bottom:16px; line-height:1.3; }
-  .roi-copy p { color:#c7c9de; margin-bottom:14px; }
-  .roi-copy ul { list-style:none; margin-top:18px; }
-  .roi-copy li { display:flex; gap:10px; margin-bottom:12px; font-size:.97rem; color:#e4e5f2; }
-  .roi-copy li svg { width:18px; height:18px; flex-shrink:0; color:#7ee8a8; margin-top:2px; }
-
-  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
-  .step { text-align:center; padding:20px; }
-  .step .num { width:52px; height:52px; border-radius:50%; background:var(--ink); color:#fff; font-weight:800; font-size:1.3rem; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
-  .alt { background:var(--bg-soft); }
-
-  .pricing-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
-  .price-card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:32px 26px; display:flex; flex-direction:column; }
-  .price-card.feat { border-color:var(--red); box-shadow:0 20px 44px -18px rgba(230,57,70,.35); position:relative; }
-  .price-card.feat .tag { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--red); color:#fff; font-size:.75rem; font-weight:800; padding:5px 14px; border-radius:999px; white-space:nowrap; }
-  .price-card h3 { font-size:1.15rem; margin-bottom:6px; }
-  .price-card .price { font-size:1.7rem; font-weight:800; margin-bottom:14px; }
-  .price-card .price span { font-size:.85rem; font-weight:600; color:var(--text-dim); }
-  .price-card p.desc { color:var(--text-dim); font-size:.92rem; margin-bottom:18px; flex:1; }
-  .price-card ul { list-style:none; }
-  .price-card li { display:flex; gap:8px; font-size:.88rem; color:var(--ink); margin-bottom:9px; }
-  .price-card li svg { width:15px; height:15px; color:var(--green); flex-shrink:0; margin-top:2px; }
-
-  .faq { max-width:760px; margin:0 auto; }
-  .faq-item { border-bottom:1px solid var(--line); padding:22px 0; }
-  .faq-item h3 { font-size:1.08rem; margin-bottom:8px; }
-  .faq-item p { color:var(--text-dim); font-size:.97rem; }
-
-  .cta-final { text-align:center; }
-  form.lead { max-width:480px; margin:0 auto; display:flex; flex-direction:column; gap:14px; text-align:left; }
-  form.lead input { padding:14px 16px; border-radius:10px; border:1px solid #d8dae3; font-size:1rem; width:100%; }
-  form.lead input:focus { outline:2px solid var(--red); outline-offset:1px; }
-  .form-note { text-align:center; color:#888; font-size:.85rem; margin-top:12px; }
-  #form-msg { text-align:center; font-weight:600; margin-top:14px; min-height:1.4em; }
-
-  footer { padding:40px 0 90px; text-align:center; color:#888; font-size:.85rem; border-top:1px solid var(--line); }
-  footer a { color:#888; }
-
-  .sticky-cta { position:fixed; bottom:0; left:0; right:0; background:var(--ink); padding:12px 16px; display:none; align-items:center; justify-content:space-between; gap:12px; z-index:70; }
-  .sticky-cta span { color:#fff; font-size:.88rem; font-weight:600; }
-  .sticky-cta .btn { padding:10px 20px; font-size:.92rem; white-space:nowrap; box-shadow:none; }
-
-  @media (max-width:1100px) {
-    .pricing-grid { grid-template-columns:repeat(2,1fr); }
-  }
-  @media (max-width:900px) {
-    .hero-grid { grid-template-columns:1fr; gap:36px; }
-    .hero-visual { order:-1; max-width:420px; margin:0 auto; }
-    .explain-grid { grid-template-columns:1fr; }
-    .explain-col { border-right:none; border-bottom:1px solid var(--line); }
-    .explain-col:last-child { border-bottom:none; }
-    .roi-grid { grid-template-columns:1fr; }
-    .pricing-grid { grid-template-columns:1fr; }
-  }
-  @media (max-width:640px) {
-    .hero { padding:36px 0 28px; }
-    .hero-grid { gap:28px; }
-    .badge { margin-bottom:16px; }
-    .hero h1 { font-size:2.1rem; margin-bottom:16px; }
-    .hero p.lead-text { font-size:1.05rem; margin-bottom:24px; }
-    .hero-ctas { margin-bottom:18px; }
-    h2 { font-size:1.6rem; }
-    section { padding:56px 0; }
-    .sticky-cta { display:flex; }
-    footer { padding-bottom:100px; }
-    .score-card, .flag-card { display:none; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winnipeg Web Works - Fund Your Project Instantly</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin:0; padding:0; background:#fafafa; color:#222;}
+        .container {max-width: 960px; margin:0 auto; padding:20px;}
+        .hero {background: linear-gradient(135deg, #0d47a1, #1565c0); color:#fff; text-align:center; padding:60px 20px;}
+        .hero h1 {font-size:2.2rem; margin:0 0 10px;}
+        .hero p {font-size:1.2rem; margin:0 0 30px;}
+        .btn {display:inline-block; background:#ffeb3b; color:#000; padding:12px 24px; font-size:1rem; font-weight:bold; text-decoration:none; border-radius:4px; margin:10px; cursor:pointer; border:none;}
+        .btn:hover {background:#fdd835;}
+        .btn-secondary {background:#90a4ae; color:#fff;}
+        .btn-secondary:hover {background:#78909c;}
+        .amount {margin:20px 0; font-size:1.2rem; text-align:center;}
+        .amount span {font-weight:bold;}
+        #output {margin-top:30px; padding:15px; background:#e8f5e9; border-left:4px solid #4caf50; font-family:monospace; white-space:pre-wrap; display:none;}
+        .spinner {display:none; margin:20px auto; width:40px; height:40px; border:4px solid #ccc; border-top-color:#0d47a1; border-radius:50%; animation:spin 0.8s linear infinite;}
+        @keyframes spin {to {transform:rotate(360deg);}}
+        .hidden {display:none;}
+    </style>
 </head>
 <body>
-
 <div class="container">
-  <header id="site-header">
-    <div class="logo"><span class="mark">W</span>Winnipeg <span>Web</span> Works</div>
-    <a class="btn btn-sm" href="#book">Book Free Audit</a>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Get Your Winnipeg Web Works Project Funded Instantly – Pay with ETH on Sepolia</h1>
+        <p>Skip the banks, skip the fees. Lock in your web development, SEO, and maintenance package with a single crypto transaction.</p>
+        <button id="ethBtn" class="btn">Pay 0.05 ETH Now</button>
+        <button id="btcBtn" class="btn btn-secondary">Pay with BTC</button>
+    </section>
+
+    <!-- Invoice Amount Display -->
+    <section class="amount" id="amountSection">
+        <p>Exact invoice amount: <span id="ethAmount">0.05000000 ETH</span> (~ $90.00 USD)</p>
+    </section>
+
+    <!-- Spinner and status -->
+    <div id="spinner" class="spinner"></div>
+    <p id="statusMsg" class="hidden"></p>
+
+    <!-- JSON Output -->
+    <pre id="output"></pre>
 </div>
-
-<div class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="badge"><span class="dot"></span> Winnipeg-owned &middot; free, no-obligation audit</div>
-        <h1>Your website is <em>losing you customers.</em> We'll show you exactly where.</h1>
-        <p class="lead-text">Winnipeg Web Works is a local website &amp; digital marketing shop. We build fast, mobile-first websites and run the ongoing marketing (SEO, ads, social) that keeps a business showing up — and we prove it's worth it upfront with a free audit that shows you precisely what's broken and what it's costing you, before you spend a dollar.</p>
-        <div class="hero-ctas">
-          <a class="btn" href="#book">Get My Free 15-Min Audit</a>
-          <button class="btn-outline" id="talk-ai-btn" type="button">Talk to our AI now</button>
-        </div>
-        <div class="trust-row">
-          <div class="item"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> No cost, no card required</div>
-          <div class="item"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Written report in 24 hours</div>
-          <div class="item"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Local, real humans</div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="flag-card"><span class="x">&#10005;</span> 3 issues found</div>
-        <div class="browser-mock">
-          <div class="browser-bar">
-            <div class="dot2"></div><div class="dot2"></div><div class="dot2"></div>
-            <div class="url">yourbusiness.ca</div>
-          </div>
-          <div class="browser-body">
-            <div class="fake-line" style="width:60%;height:16px;margin-bottom:16px;"></div>
-            <div class="fake-line" style="width:92%;"></div>
-            <div class="fake-line" style="width:80%;"></div>
-            <div class="fake-line" style="width:87%;margin-bottom:18px;"></div>
-            <div class="fake-line" style="width:40%;height:32px;border-radius:8px;background:#fdeceb;"></div>
-          </div>
-        </div>
-        <div class="score-card">
-          <div class="score-ring"><div class="inner">37<span style="font-size:.55rem;">/100</span></div></div>
-          <div class="label">Mobile Speed Score</div>
-          <div class="finding">Losing ~40% of mobile visitors</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="explainer" id="what-we-do">
-  <div class="container">
-    <div class="eyebrow">What Winnipeg Web Works actually is</div>
-    <h2>A local shop that builds your site — and keeps you visible after</h2>
-    <p class="sub">Not just a designer, not just an ads agency. One local team that handles your whole online presence, starting with an honest, free look at what's actually happening today.</p>
-    <div class="explain-grid">
-      <div class="explain-col">
-        <div class="step-n">1</div>
-        <h3>We audit, free</h3>
-        <p>A 15-minute call where we show you your site's real speed, mobile experience, and Google visibility — with specifics, not vague advice.</p>
-      </div>
-      <div class="explain-col">
-        <div class="step-n">2</div>
-        <h3>We build, if it's a fit</h3>
-        <p>A fast, mobile-first website built to fix exactly what the audit found — real strategy and copywriting, not a generic template.</p>
-      </div>
-      <div class="explain-col">
-        <div class="step-n">3</div>
-        <h3>We keep you visible</h3>
-        <p>Ongoing SEO, social, and ad management so the traffic and leads don't dry up the month after launch, the way they do with a "set and forget" site.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="eyebrow">The free audit covers</div>
-    <h2>Three places Winnipeg businesses leak customers every day</h2>
-    <p class="sub">This is the same audit whether you ever hire us again or not — it's yours to keep.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
-        <h3>Your Website</h3>
-        <p>Slow load times, broken mobile layouts, dead ends, and confusing calls-to-action that send customers to your competitors instead.</p>
-      </div>
-      <div class="card">
-        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-7-7 18-3-8-8-3z"/></svg></div>
-        <h3>Your Ads</h3>
-        <p>Wasted spend, wrong keywords, and campaigns nobody's watching. Most local businesses burn 30%+ of their ad budget without knowing it.</p>
-      </div>
-      <div class="card">
-        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-        <h3>Your Visibility</h3>
-        <p>Google rankings, reviews, and listings. If you don't show up when someone searches "near me," that customer never knew you existed.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="roi">
-  <div class="container">
-    <div class="eyebrow">Why it's worth paying for</div>
-    <h2>What a leaky website actually costs you</h2>
-    <p class="sub">This is the math we walk through on every audit call — swap in your own numbers and it usually gets worse, not better.</p>
-    <div class="roi-grid">
-      <div class="roi-copy">
-        <h3>A slow, confusing site isn't a cosmetic problem. It's lost revenue, every single month.</h3>
-        <p>If 100 people find your business online each month and your site is slow or unclear, a third of them leave before they ever see what you offer. That's not a guess — it's the single most common finding across every audit we run.</p>
-        <ul>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> A rebuilt site typically pays for itself inside 2-4 months once the leak is fixed.</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Ongoing SEO/ads work compounds — month 6 costs the same as month 1 but brings in more.</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Priced below typical Winnipeg agency rates because we're local and building our name here.</li>
-        </ul>
-      </div>
-      <div class="roi-math">
-        <div class="roi-row"><span>Monthly visitors to a typical local site</span><span class="val">~300</span></div>
-        <div class="roi-row"><span>Lost to slow load / bad mobile (avg. 35%)</span><span class="val">−105</span></div>
-        <div class="roi-row"><span>Of those lost, would've become customers (5%)</span><span class="val">~5 jobs/mo.</span></div>
-        <div class="roi-row"><span>Average job value (varies by business)</span><span class="val">$150–$1,000+</span></div>
-        <div class="roi-row total"><span>Potential monthly revenue left on the table</span><span class="val">$750–$5,000+</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt" id="how">
-  <div class="container">
-    <h2>How it works</h2>
-    <p class="sub">From request to answers in under 48 hours.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3>Request your audit</h3>
-        <p>Drop your name and email below. We reply within one business day to book your 15-minute call.</p>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3>Live audit call</h3>
-        <p>We screen-share and show you 3 quick wins on the spot — specific to your site, not generic tips.</p>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3>Get your report</h3>
-        <p>Full written audit within 24 hours. Yours to keep, either way.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="work-with-us">
-  <div class="container">
-    <div class="eyebrow">If you want to fix what we find</div>
-    <h2>After your audit</h2>
-    <p class="sub">The audit is free and always will be — here's exactly what it costs to fix what it finds.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>The Digital Facelift</h3>
-        <div class="price">$900&ndash;$2,000</div>
-        <p class="desc">Already have a site or an internal tool? Keep everything it does &mdash; we just make it look like a business worth paying more. Front end and back end both get the glow-up.</p>
-        <ul>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Visual redesign, same functionality</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Dashboards &amp; admin tools polished too</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Days, not weeks &mdash; no rebuild needed</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <h3>Website Build</h3>
-        <div class="price">$2,500&ndash;$6,000</div>
-        <p class="desc">A fast, mobile-first site built around the exact leaks your audit found — not a template.</p>
-        <ul>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Mobile-first, fast-loading build</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Copy &amp; layout fixed to your audit</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> One-time cost, yours forever</li>
-        </ul>
-      </div>
-      <div class="price-card feat">
-        <div class="tag">Best value — reaches full partnership</div>
-        <h3>Build + Grow, Bundled</h3>
-        <div class="price">$6,000&ndash;$12,000</div>
-        <p class="desc">A new site plus 6-12 months of active growth work, priced together.</p>
-        <ul>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Everything in Website Build</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> 6-12 months SEO, social, ads</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> One partner, one bill, no gaps</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <h3>Growth Partnership</h3>
-        <div class="price">$400&ndash;$800<span>/mo</span></div>
-        <p class="desc">SEO, social, and ad management so you stay visible month after month.</p>
-        <ul>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Ongoing SEO &amp; content</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Social + ad management</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 10.5l4 4 8-9"/></svg> Month-to-month, cancel anytime</li>
-        </ul>
-      </div>
-    </div>
-    <p class="sub" style="margin-top:36px;margin-bottom:0;">Every relationship starts with the free audit — real pricing depends on what it turns up. <a href="#book" style="color:var(--red);font-weight:700;">Book yours</a> to find out what fits.</p>
-  </div>
-</section>
-
-<section class="alt" id="faq">
-  <div class="container">
-    <h2>Common questions</h2>
-    <p class="sub">Straight answers, no fine print.</p>
-    <div class="faq">
-      <div class="faq-item">
-        <h3>What does Winnipeg Web Works actually do?</h3>
-        <p>We build and fix websites, and run the ongoing marketing (SEO, social, ads) that keeps a business showing up online. We start every relationship with a free audit so you see exactly what's broken before you spend anything.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is the audit actually free?</h3>
-        <p>Yes. No cost and no card required. The 15-minute call and the written report are free, whether or not you ever work with us again.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Why does a website cost $2,500-$6,000? What am I paying for?</h3>
-        <p>You're paying for a site built specifically to fix the leaks your audit found — fast load times, mobile-first design, clear calls to action, real copywriting and strategy — not a generic template. It's priced below typical Winnipeg agency rates since we're local and building our name here.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do I need to sign anything or give payment info for the audit?</h3>
-        <p>No. Just your name and email to book the call. No contract, no card.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What exactly do you look at?</h3>
-        <p>Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for "near me" searches).</p>
-      </div>
-      <div class="faq-item">
-        <h3>What's the Digital Facelift, and how's it different from a full rebuild?</h3>
-        <p>Some sites (and internal tools like dashboards or admin panels) work fine — they just look unfinished, and that costs you trust before a customer reads a word. The Facelift is a visual-only overhaul: same pages, same features, same backend, just built to look like a business people want to pay more. No rebuild, no downtime, done in days. If your audit turns up real functional problems, we'll tell you honestly and point you at the Website Build instead.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="book">
-  <div class="container cta-final">
-    <h2>Request your free audit</h2>
-    <p class="sub">Only a handful of audit slots open each week. Grab yours.</p>
-    <form class="lead" id="lead-form" action="https://formsubmit.co/ajax/e25d7255fffba0a90edb046c4094d90a" method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Email address" required>
-      <input type="url" name="website" placeholder="Your website (optional)">
-      <input type="hidden" name="_subject" value="🔍 New audit request — Winnipeg Web Works">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" style="display:none">
-      <button class="btn" type="submit">Request My Free Audit</button>
-    </form>
-    <p class="form-note">No cost, no card, no obligation. We reply within one business day.</p>
-    <div id="form-msg"></div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    © 2026 Winnipeg Web Works · Winnipeg, Manitoba · <a href="mailto:winnipegwebworks@gmail.com">winnipegwebworks@gmail.com</a>
-  </div>
-</footer>
-
-<div class="sticky-cta">
-  <span>Free 15-min audit, no cost</span>
-  <a class="btn" href="#book">Book now</a>
-</div>
-
-<!-- ElevenLabs Conversational AI widget — free live audit chat/voice -->
-<elevenlabs-convai agent-id="agent_4801m3a3kqw1e7dswfbhrw252fmd"></elevenlabs-convai>
-<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-<script>
-document.getElementById("talk-ai-btn").addEventListener("click", () => {
-  const widget = document.querySelector("elevenlabs-convai");
-  if (widget && typeof widget.startCall === "function") {
-    widget.startCall();
-  } else if (widget) {
-    widget.setAttribute("override-open", "true");
-    widget.click();
-  } else {
-    // Conversational AI widget unavailable (blocked CDN or ad-blocker) —
-    // degrade gracefully to the booking form instead of a dead button.
-    document.getElementById("book").scrollIntoView({ behavior: "smooth" });
-  }
-});
-
-window.addEventListener("scroll", () => {
-  document.getElementById("site-header").classList.toggle("scrolled", window.scrollY > 8);
-});
-</script>
 
 <script>
-document.getElementById("lead-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const f = e.target;
-  const msg = document.getElementById("form-msg");
-  const btn = f.querySelector("button");
-  btn.disabled = true; btn.textContent = "Sending…";
-  try {
-    const res = await fetch(f.action, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({
-        name: f.name.value,
-        email: f.email.value,
-        website: f.website.value || "",
-        _subject: f._subject.value,
-        _template: "table",
-        _honey: f._honey.value
-      })
+    const RECIPIENT_ADDRESS = '0xCc0E51687D9EbF034a3bDfBA4c859B0C78B23b06';
+    const ETH_AMOUNT = '0.05';
+    const BTC_AMOUNT = '0.0015'; // approximate BTC for same $ value
+    const ETH_USD_RATE = 1800; // fixed for display
+    const ethAmountUsd = (parseFloat(ETH_AMOUNT) * ETH_USD_RATE).toFixed(2);
+    document.getElementById('ethAmount').textContent = ETH_AMOUNT + ' ETH';
+    // If you want to show BTC amount similarly, could add another line.
+
+    async function createInvoice(endpoint, amount, currency, network) {
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({amountEth: amount, currency, network})
+        });
+        if (!response.ok) throw new Error(`Invoice creation failed: ${response.status}`);
+        return await response.json(); // expecting { id: '...' }
+    }
+
+    async function pollVerification(endpoint, id, intervalMs = 2000, timeoutMs = 180000) {
+        const end = Date.now() + timeoutMs;
+        while (Date.now() < end) {
+            const resp = await fetch(endpoint.replace('{id}', id));
+            if (!resp.ok) throw new Error(`Polling failed: ${resp.status}`);
+            const data = await resp.json();
+            if (data.status === 'paid') return data;
+            await new Promise(r => setTimeout(r, intervalMs));
+        }
+        throw new Error('Polling timeout');
+    }
+
+    function showSpinner(show) {
+        document.getElementById('spinner').style.display = show ? 'block' : 'none';
+    }
+    function setStatus(msg, error = false) {
+        const el = document.getElementById('statusMsg');
+        el.textContent = msg;
+        el.className = error ? 'error' : '';
+        el.classList.remove('hidden');
+    }
+    function hideStatus() {
+        document.getElementById('statusMsg').classList.add('hidden');
+    }
+    function showOutput(jsonObj) {
+        const out = document.getElementById('output');
+        out.textContent = JSON.stringify(jsonObj, null, 2);
+        out.style.display = 'block';
+        console.log('Payment successful, output JSON:', jsonObj);
+    }
+
+    document.getElementById('ethBtn').addEventListener('click', async () => {
+        showSpinner(true);
+        setStatus('Creating ETH invoice...');
+        try {
+            const invoice = await createInvoice('/api/payments/invoice', ETH_AMOUNT, 'ETH', 'sepolia');
+            setStatus(`Invoice created. Waiting for payment...`);
+            const result = await pollVerification(`/api/payments/invoice/${invoice.id}/verify`);
+            showSpinner(false);
+            setStatus(`Payment confirmed! Tx hash: ${result.txHash}`);
+            const jsonOutput = {
+                type: 'invoice',
+                method: 'ETH',
+                priceModel: 'fixed',
+                priceEth: ETH_AMOUNT,
+                firstDollarPlan: 'Basic Winnipeg Web Works Package',
+                needs: ['website', 'seo', 'maintenance']
+            };
+            showOutput(jsonOutput);
+        } catch (err) {
+            showSpinner(false);
+            setStatus(`Error: ${err.message}`, true);
+            console.error(err);
+        }
     });
-    if (!res.ok) throw new Error("Request failed");
-    msg.style.color = "#2a9d8f";
-    msg.textContent = "✓ Got it! We'll email you within one business day to book your audit call.";
-    f.reset();
-  } catch (err) {
-    msg.style.color = "#e63946";
-    msg.textContent = "Something went wrong — please email winnipegwebworks@gmail.com directly.";
-  }
-  btn.disabled = false; btn.textContent = "Request My Free Audit";
-});
-</script>
 
+    document.getElementById('btcBtn').addEventListener('click', async () => {
+        showSpinner(true);
+        setStatus('Creating BTC invoice...');
+        try {
+            const invoice = await createInvoice('/api/payments/btc-invoice', BTC_AMOUNT, 'BTC', 'testnet'); // assuming testnet
+            setStatus(`Invoice created. Waiting for payment...`);
+            const result = await pollVerification(`/api/payments/btc-invoice/${invoice.id}/verify`);
+            showSpinner(false);
+            setStatus(`Payment confirmed! Tx hash: ${result.txHash}`);
+            const jsonOutput = {
+                type: 'invoice',
+                method: 'BTC',
+                priceModel: 'fixed',
+                priceBtc: BTC_AMOUNT, // optional field
+                firstDollarPlan: 'Basic Winnipeg Web Works Package',
+                needs: ['website', 'seo', 'maintenance']
+            };
+            showOutput(jsonOutput);
+        } catch (err) {
+            showSpinner(false);
+            setStatus(`Error: ${err.message}`, true);
+            console.error(err);
+        }
+    });
+</script>
 </body>
 </html>
