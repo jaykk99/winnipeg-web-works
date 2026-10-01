@@ -1,149 +1,834 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winnipeg Web Works - Fund Your Project Instantly</title>
-    <style>
-        body {font-family: Arial, sans-serif; margin:0; padding:0; background:#fafafa; color:#222;}
-        .container {max-width: 960px; margin:0 auto; padding:20px;}
-        .hero {background: linear-gradient(135deg, #0d47a1, #1565c0); color:#fff; text-align:center; padding:60px 20px;}
-        .hero h1 {font-size:2.2rem; margin:0 0 10px;}
-        .hero p {font-size:1.2rem; margin:0 0 30px;}
-        .btn {display:inline-block; background:#ffeb3b; color:#000; padding:12px 24px; font-size:1rem; font-weight:bold; text-decoration:none; border-radius:4px; margin:10px; cursor:pointer; border:none;}
-        .btn:hover {background:#fdd835;}
-        .btn-secondary {background:#90a4ae; color:#fff;}
-        .btn-secondary:hover {background:#78909c;}
-        .amount {margin:20px 0; font-size:1.2rem; text-align:center;}
-        .amount span {font-weight:bold;}
-        #output {margin-top:30px; padding:15px; background:#e8f5e9; border-left:4px solid #4caf50; font-family:monospace; white-space:pre-wrap; display:none;}
-        .spinner {display:none; margin:20px auto; width:40px; height:40px; border:4px solid #ccc; border-top-color:#0d47a1; border-radius:50%; animation:spin 0.8s linear infinite;}
-        @keyframes spin {to {transform:rotate(360deg);}}
-        .hidden {display:none;}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winnipeg Web Works — We Find Where Your Website Is Losing You Customers</title>
+<meta name="description" content="Winnipeg Web Works audits your website, ads, and Google visibility, then shows you exactly what's costing you customers — free 15-minute call, real report in 24 hours.">
+<link rel="canonical" href="https://winnipeg-web-works.vercel.app/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#121117">
+
+<!-- Open Graph / social share preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://winnipeg-web-works.vercel.app/">
+<meta property="og:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
+<meta property="og:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours. Winnipeg-owned.">
+<meta property="og:locale" content="en_CA">
+<meta property="og:site_name" content="Winnipeg Web Works">
+<meta property="og:image" content="https://winnipeg-web-works.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Winnipeg Web Works — We Find Where Your Website Is Losing You Customers. Free 15-min audit, report in 24h.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://winnipeg-web-works.vercel.app/og-image.png">
+<meta name="twitter:image:alt" content="Winnipeg Web Works — We Find Where Your Website Is Losing You Customers. Free 15-min audit, report in 24h.">
+<meta name="twitter:title" content="Winnipeg Web Works — Free 15-Minute Digital Audit">
+<meta name="twitter:description" content="We audit your website, ads, and Google visibility — free 15-minute call, 3 quick wins on the spot, full written report in 24 hours.">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Premium typography: Fraunces (display serif) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Winnipeg Web Works",
+  "url": "https://winnipeg-web-works.vercel.app/",
+  "email": "winnipegwebworks@gmail.com",
+  "description": "Digital credibility audits, website design, and ongoing marketing for Winnipeg businesses. Free 15-minute audit, written report in 24 hours. Engagements from $10,000.",
+  "priceRange": "$$$",
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Winnipeg", "addressRegion": "MB", "addressCountry": "CA" },
+  "makesOffer": { "@type": "Offer", "name": "Free 15-Minute Digital Audit", "price": "0", "priceCurrency": "CAD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What does Winnipeg Web Works actually do?", "acceptedAnswer": { "@type": "Answer", "text": "We build and fix websites, and run ongoing marketing (SEO, social, ads) for Winnipeg businesses. We start every relationship with a free audit that shows you exactly what's costing you customers before you spend a dollar." } },
+    { "@type": "Question", "name": "Is the audit actually free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. No cost and no card required. The 15-minute call and the written report are free, whether or not you ever work with us again." } },
+    { "@type": "Question", "name": "What do engagements cost?", "acceptedAnswer": { "@type": "Answer", "text": "Paid engagements start at $10,000. Exact scope and pricing are set after your free audit, based on what it turns up." } },
+    { "@type": "Question", "name": "Do I need to sign anything or give payment info for the audit?", "acceptedAnswer": { "@type": "Answer", "text": "No. Just your name and email to book the call. No contract, no card." } },
+    { "@type": "Question", "name": "What exactly do you look at in an audit?", "acceptedAnswer": { "@type": "Answer", "text": "Your website (speed, mobile experience, dead ends), your ads if you're running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for 'near me' searches)." } },
+    { "@type": "Question", "name": "What's the Digital Facelift?", "acceptedAnswer": { "@type": "Answer", "text": "A visual-only overhaul for a site or internal tool that already works but looks unfinished — same features and backend, new front-end and dashboard design, done in days without a rebuild." } }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#121117; --ink-soft:#1b1a21; --ink-line:rgba(255,255,255,.12);
+    --paper:#faf8f3; --paper-soft:#f2eee4; --card:#ffffff;
+    --line:#e6e0d1; --text-dim:#5f5b50; --text-faint:#8a8574;
+    --gold:#b8862f; --gold-deep:#8f6a22; --gold-soft:#f6ecd7; --gold-bright:#d9ab4e;
+    --green:#2f9e63; --red:#c0392b;
+    --radius:18px;
+    --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+    --font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --shadow-lg:0 30px 60px -20px rgba(18,17,23,.28);
+    --shadow-md:0 18px 38px -16px rgba(18,17,23,.16);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:var(--font-body); color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .container { max-width:1160px; margin:0 auto; padding:0 28px; }
+  a { color:inherit; }
+  img,svg { display:block; max-width:100%; }
+
+  /* Accessibility: skip link + focus */
+  .skip-link { position:absolute; left:-9999px; top:0; background:var(--ink); color:#fff; padding:12px 20px; z-index:200; border-radius:0 0 10px 0; font-weight:600; }
+  .skip-link:focus { left:0; }
+  :focus-visible { outline:3px solid var(--gold); outline-offset:3px; border-radius:4px; }
+
+  /* Reveal-on-scroll */
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal-d1 { transition-delay:.08s; } .reveal-d2 { transition-delay:.16s; } .reveal-d3 { transition-delay:.24s; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    .reveal { opacity:1; transform:none; transition:none; }
+    *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  }
+
+  /* Header */
+  header.site { position:sticky; top:0; z-index:60; background:rgba(250,248,243,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid transparent; transition:border-color .2s ease; }
+  header.site.scrolled { border-bottom-color:var(--line); }
+  .header-inner { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
+  .logo { font-family:var(--font-display); font-size:1.35rem; font-weight:600; letter-spacing:-.01em; display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .logo .mark { width:38px; height:38px; border-radius:11px; background:var(--ink); color:var(--gold-bright); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.15rem; font-family:var(--font-display); }
+  .logo em { font-style:normal; color:var(--gold-deep); }
+  nav.main-nav { display:flex; gap:28px; font-size:.94rem; font-weight:500; color:var(--text-dim); }
+  nav.main-nav a { text-decoration:none; transition:color .15s ease; }
+  nav.main-nav a:hover { color:var(--ink); }
+
+  /* Buttons */
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; background:linear-gradient(180deg,#c99a3a,#a97e28); color:#fff; padding:16px 34px; border-radius:12px; font-weight:700; text-decoration:none; font-size:1rem; border:none; cursor:pointer; letter-spacing:.01em; box-shadow:0 12px 26px -10px rgba(184,134,47,.6); transition:transform .18s ease, box-shadow .18s ease, filter .18s ease; font-family:var(--font-body); }
+  .btn:hover { transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 16px 32px -10px rgba(184,134,47,.7); }
+  .btn:active { transform:translateY(0); }
+  .btn:disabled { opacity:.65; cursor:wait; transform:none; }
+  .btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:10px; background:transparent; color:var(--paper); padding:14px 30px; border-radius:12px; font-weight:600; text-decoration:none; font-size:1rem; border:1.5px solid rgba(250,248,243,.35); cursor:pointer; transition:border-color .18s ease, background .18s ease, transform .18s ease; font-family:var(--font-body); }
+  .btn-outline:hover { border-color:var(--gold-bright); background:rgba(255,255,255,.06); transform:translateY(-2px); }
+  .btn-sm { padding:11px 22px; font-size:.92rem; border-radius:10px; }
+  .btn-light { background:#fff; color:var(--ink); box-shadow:var(--shadow-md); }
+  .btn-light:hover { filter:none; background:var(--gold-soft); }
+
+  /* Hero */
+  .hero { background:radial-gradient(1200px 600px at 50% -12%, #26242e 0%, var(--ink) 58%); color:var(--paper); padding:88px 0 96px; position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; inset:0; background:radial-gradient(700px 340px at 82% 18%, rgba(184,134,47,.14), transparent 65%); pointer-events:none; }
+  .hero-grid { display:grid; grid-template-columns:1.02fr .98fr; gap:64px; align-items:center; position:relative; z-index:1; }
+  .badge { display:inline-flex; align-items:center; gap:10px; background:rgba(184,134,47,.12); border:1px solid rgba(184,134,47,.4); color:#e8c877; font-weight:600; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; padding:9px 18px; border-radius:999px; margin-bottom:26px; }
+  .badge .dot { width:7px; height:7px; border-radius:50%; background:#e8c877; box-shadow:0 0 12px #e8c877; animation:pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.35;} }
+  .hero h1 { font-family:var(--font-display); font-size:3.4rem; line-height:1.08; font-weight:600; letter-spacing:-.02em; margin-bottom:24px; }
+  .hero h1 em { font-style:italic; color:#e8c877; font-weight:500; }
+  .hero p.lead-text { font-size:1.18rem; color:#c9c6bb; max-width:540px; margin-bottom:34px; font-weight:400; }
+  .hero-ctas { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:30px; }
+  .trust-row { display:flex; gap:24px; flex-wrap:wrap; font-size:.9rem; color:#a9a59a; }
+  .trust-row .item { display:flex; align-items:center; gap:9px; }
+  .trust-row svg { width:17px; height:17px; flex-shrink:0; color:#e8c877; }
+
+  /* Hero visual */
+  .hero-visual { position:relative; animation:float-in 1s cubic-bezier(.22,.61,.36,1) .15s both; }
+  @keyframes float-in { from { opacity:0; transform:translateY(30px) scale(.98); } to { opacity:1; transform:none; } }
+  .browser-mock { background:#fff; color:var(--ink); border-radius:16px; box-shadow:0 40px 80px -24px rgba(0,0,0,.55); overflow:hidden; border:1px solid rgba(255,255,255,.1); }
+  .browser-bar { display:flex; align-items:center; gap:7px; padding:13px 16px; background:#f4f1e9; border-bottom:1px solid var(--line); }
+  .browser-bar .dot2 { width:10px; height:10px; border-radius:50%; background:#d8d2c0; }
+  .browser-bar .url { margin-left:12px; background:#fff; border:1px solid var(--line); border-radius:8px; padding:5px 12px; font-size:.74rem; color:var(--text-dim); flex:1; font-weight:500; }
+  .browser-body { padding:26px; }
+  .fake-line { height:11px; border-radius:6px; background:#ece7d8; margin-bottom:11px; }
+  .score-card { position:absolute; bottom:-26px; left:-26px; background:#fff; color:var(--ink); border-radius:16px; box-shadow:var(--shadow-lg); padding:18px 20px; width:224px; border:1px solid var(--line); }
+  .score-ring { --p:0; width:58px; height:58px; border-radius:50%; background:conic-gradient(var(--gold) calc(var(--p)*1turn), #ece7d8 0); display:flex; align-items:center; justify-content:center; margin-bottom:12px; transition:--p 1.4s ease; }
+  .score-ring .inner { width:44px; height:44px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.92rem; }
+  .score-card .label { font-size:.7rem; color:var(--text-dim); font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:3px; }
+  .score-card .finding { font-size:.85rem; font-weight:700; color:var(--ink); line-height:1.4; }
+  .flag-card { position:absolute; top:-20px; right:-16px; background:#fff; color:var(--ink); border-radius:12px; padding:11px 16px; font-size:.8rem; font-weight:700; box-shadow:var(--shadow-md); display:flex; align-items:center; gap:9px; border:1px solid var(--line); }
+  .flag-card .x { color:var(--red); font-weight:800; }
+
+  /* Sections */
+  section.block { padding:96px 0; }
+  section.block.tight { padding:64px 0; }
+  h2 { font-family:var(--font-display); font-size:2.5rem; font-weight:600; text-align:center; margin-bottom:16px; letter-spacing:-.015em; line-height:1.15; }
+  .sub { text-align:center; color:var(--text-dim); max-width:640px; margin:0 auto 56px; font-size:1.06rem; }
+  .eyebrow { text-align:center; color:var(--gold-deep); font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; margin-bottom:14px; }
+  .rule { width:56px; height:3px; background:linear-gradient(90deg,var(--gold),transparent); margin:0 auto 0; border-radius:2px; }
+
+  /* Trust band */
+  .trust-band { background:var(--ink); color:var(--paper); padding:34px 0; }
+  .trust-band .row { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+  .trust-band .stat b { display:block; font-family:var(--font-display); font-size:1.7rem; font-weight:600; color:#e8c877; margin-bottom:4px; }
+  .trust-band .stat span { font-size:.86rem; color:#a9a59a; }
+
+  /* Deliverables / proof */
+  .proof-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .proof-card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:38px 32px; box-shadow:0 2px 6px rgba(18,17,23,.04); transition:transform .2s ease, box-shadow .2s ease; }
+  .proof-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+  .proof-card .num { font-family:var(--font-display); font-size:2.6rem; color:var(--gold); font-weight:600; margin-bottom:14px; line-height:1; }
+  .proof-card h3 { font-size:1.2rem; margin-bottom:10px; font-weight:700; }
+  .proof-card p { color:var(--text-dim); font-size:.97rem; }
+  .guarantee { margin-top:36px; background:var(--gold-soft); border:1px solid #e8d9b4; border-radius:var(--radius); padding:26px 32px; display:flex; gap:18px; align-items:flex-start; }
+  .guarantee svg { width:26px; height:26px; flex-shrink:0; color:var(--gold-deep); margin-top:3px; }
+  .guarantee p { font-size:.98rem; color:#4d4a40; }
+  .guarantee strong { color:var(--ink); }
+
+  /* Explainer */
+  .explainer { background:var(--paper-soft); }
+  .explain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--card); box-shadow:0 2px 6px rgba(18,17,23,.04); }
+  .explain-col { padding:40px 34px; border-right:1px solid var(--line); position:relative; transition:background .2s ease; }
+  .explain-col:last-child { border-right:none; }
+  .explain-col:hover { background:#fffdf8; }
+  .explain-col .step-n { width:34px; height:34px; border-radius:10px; background:var(--ink); color:#e8c877; font-weight:700; font-size:.95rem; display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-family:var(--font-display); }
+  .explain-col h3 { font-size:1.15rem; margin-bottom:10px; font-weight:700; }
+  .explain-col p { color:var(--text-dim); font-size:.96rem; }
+
+  /* Cards */
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:38px 32px; transition:box-shadow .2s ease, transform .2s ease; }
+  .card:hover { box-shadow:var(--shadow-md); transform:translateY(-4px); }
+  .card .icon-wrap { width:54px; height:54px; border-radius:14px; background:var(--gold-soft); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+  .card .icon-wrap svg { width:26px; height:26px; color:var(--gold-deep); }
+  .card h3 { font-size:1.25rem; margin-bottom:10px; font-weight:700; }
+  .card p { color:var(--text-dim); font-size:.97rem; }
+
+  /* ROI */
+  .roi { background:radial-gradient(1000px 520px at 50% 0%, #232228 0%, var(--ink) 60%); color:var(--paper); }
+  .roi h2 { color:var(--paper); }
+  .roi .sub { color:#a9a59a; }
+  .roi .eyebrow { color:#e8c877; }
+  .roi-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  .roi-math { background:rgba(255,255,255,.045); border:1px solid var(--ink-line); border-radius:var(--radius); padding:34px; backdrop-filter:blur(4px); }
+  .roi-row { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:15px 0; border-bottom:1px solid var(--ink-line); font-size:.98rem; color:#d8d5cb; }
+  .roi-row:last-child { border-bottom:none; }
+  .roi-row .val { font-weight:800; font-size:1.12rem; color:#fff; white-space:nowrap; }
+  .roi-row.total { padding-top:22px; }
+  .roi-row.total .val { color:#e8c877; font-size:1.5rem; font-family:var(--font-display); }
+  .roi-copy h3 { font-family:var(--font-display); font-size:1.7rem; margin-bottom:18px; line-height:1.3; font-weight:600; }
+  .roi-copy p { color:#b9b6ab; margin-bottom:16px; }
+  .roi-copy ul { list-style:none; margin-top:20px; }
+  .roi-copy li { display:flex; gap:12px; margin-bottom:14px; font-size:.98rem; color:#e6e3da; }
+  .roi-copy li svg { width:19px; height:19px; flex-shrink:0; color:#e8c877; margin-top:3px; }
+  .roi-note { margin-top:18px; font-size:.82rem; color:#8a8779; font-style:italic; }
+
+  /* Steps */
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:28px; }
+  .step { text-align:center; padding:24px; }
+  .step .num { width:58px; height:58px; border-radius:50%; background:var(--ink); color:#e8c877; font-weight:600; font-size:1.35rem; font-family:var(--font-display); display:flex; align-items:center; justify-content:center; margin:0 auto 18px; }
+  .step h3 { font-size:1.15rem; margin-bottom:8px; font-weight:700; }
+  .step p { color:var(--text-dim); font-size:.96rem; }
+  .alt { background:var(--paper-soft); }
+
+  /* Pricing */
+  .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:stretch; }
+  .price-card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:40px 34px; display:flex; flex-direction:column; transition:transform .2s ease, box-shadow .2s ease; }
+  .price-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+  .price-card.feat { border:1.5px solid var(--gold); box-shadow:0 24px 50px -18px rgba(184,134,47,.35); position:relative; background:linear-gradient(180deg,#fffdf7,#fff); }
+  .price-card.feat .tag { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:linear-gradient(180deg,#c99a3a,#a97e28); color:#fff; font-size:.74rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:7px 18px; border-radius:999px; white-space:nowrap; }
+  .price-card h3 { font-family:var(--font-display); font-size:1.35rem; margin-bottom:8px; font-weight:600; }
+  .price-card .price { font-size:1.9rem; font-weight:800; margin-bottom:6px; letter-spacing:-.01em; }
+  .price-card .price span { font-size:.85rem; font-weight:600; color:var(--text-dim); }
+  .price-card .from { font-size:.82rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:.08em; font-weight:700; margin-bottom:2px; }
+  .price-card p.desc { color:var(--text-dim); font-size:.94rem; margin-bottom:22px; flex:1; }
+  .price-card ul { list-style:none; margin-bottom:26px; }
+  .price-card li { display:flex; gap:10px; font-size:.9rem; color:var(--ink); margin-bottom:10px; }
+  .price-card li svg { width:16px; height:16px; color:var(--gold-deep); flex-shrink:0; margin-top:3px; }
+
+  /* FAQ */
+  .faq { max-width:780px; margin:0 auto; }
+  .faq-item { border-bottom:1px solid var(--line); }
+  .faq-item summary { padding:24px 8px; font-size:1.1rem; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .faq-item summary::-webkit-details-marker { display:none; }
+  .faq-item summary .plus { font-size:1.4rem; color:var(--gold-deep); font-weight:400; flex-shrink:0; transition:transform .2s ease; line-height:1; }
+  .faq-item[open] summary .plus { transform:rotate(45deg); }
+  .faq-item .answer { padding:0 8px 26px; color:var(--text-dim); font-size:.98rem; max-width:680px; }
+
+  /* Lead form */
+  .cta-final { text-align:center; }
+  .book-wrap { background:var(--ink); color:var(--paper); border-radius:26px; padding:64px 48px; max-width:880px; margin:0 auto; position:relative; overflow:hidden; }
+  .book-wrap::before { content:""; position:absolute; inset:0; background:radial-gradient(600px 300px at 50% -10%, rgba(184,134,47,.18), transparent 70%); pointer-events:none; }
+  .book-wrap h2 { color:var(--paper); position:relative; }
+  .book-wrap .sub { color:#a9a59a; position:relative; }
+  form.lead { max-width:480px; margin:0 auto; display:flex; flex-direction:column; gap:16px; text-align:left; position:relative; }
+  .field label { display:block; font-size:.84rem; font-weight:600; margin-bottom:7px; color:#d8d5cb; letter-spacing:.02em; }
+  .field .req { color:#e8c877; }
+  form.lead input { padding:15px 18px; border-radius:12px; border:1.5px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06); color:#fff; font-size:1rem; width:100%; font-family:var(--font-body); transition:border-color .15s ease, background .15s ease; }
+  form.lead input::placeholder { color:#7d7a70; }
+  form.lead input:focus { outline:none; border-color:var(--gold); background:rgba(255,255,255,.09); }
+  form.lead input[aria-invalid="true"] { border-color:var(--red); }
+  .field-err { display:none; font-size:.83rem; color:#f0a49a; margin-top:6px; font-weight:500; }
+  .field-err.show { display:block; }
+  /* Honeypot: off-screen, never visible, never focusable */
+  .hp { position:absolute !important; left:-9999px !important; top:auto !important; width:1px !important; height:1px !important; overflow:hidden !important; }
+  .form-note { text-align:center; color:#8a8779; font-size:.86rem; margin-top:18px; position:relative; }
+  #form-msg { text-align:center; font-weight:600; margin-top:16px; min-height:1.5em; font-size:1rem; position:relative; }
+  #form-msg.ok { color:#9fe0b8; }
+  #form-msg.err { color:#f0a49a; }
+  #form-msg a { color:#e8c877; }
+
+  footer { padding:48px 0 48px; text-align:center; color:var(--text-faint); font-size:.87rem; border-top:1px solid var(--line); background:var(--paper); }
+  footer a { color:var(--text-dim); }
+  footer .foot-logo { font-family:var(--font-display); font-size:1.1rem; color:var(--ink); margin-bottom:8px; font-weight:600; }
+
+  .sticky-cta { position:fixed; bottom:0; left:0; right:0; background:rgba(18,17,23,.96); backdrop-filter:blur(10px); padding:13px 18px; display:none; align-items:center; justify-content:space-between; gap:14px; z-index:70; border-top:1px solid var(--ink-line); }
+  .sticky-cta span { color:#fff; font-size:.9rem; font-weight:600; }
+  .sticky-cta .btn { padding:11px 22px; font-size:.92rem; white-space:nowrap; box-shadow:none; }
+
+  @media (max-width:1024px) {
+    .hero h1 { font-size:2.8rem; }
+    .pricing-grid { grid-template-columns:1fr; max-width:520px; margin:0 auto; }
+    .trust-band .row { grid-template-columns:repeat(2,1fr); gap:28px; }
+  }
+  @media (max-width:900px) {
+    .hero { padding:64px 0 80px; }
+    .hero-grid { grid-template-columns:1fr; gap:52px; }
+    .hero-visual { order:-1; max-width:440px; margin:0 auto; width:100%; }
+    nav.main-nav { display:none; }
+    .proof-grid { grid-template-columns:1fr; }
+    .explain-grid { grid-template-columns:1fr; }
+    .explain-col { border-right:none; border-bottom:1px solid var(--line); }
+    .explain-col:last-child { border-bottom:none; }
+    .roi-grid { grid-template-columns:1fr; gap:40px; }
+  }
+  @media (max-width:640px) {
+    section.block { padding:64px 0; }
+    h2 { font-size:1.85rem; }
+    .hero { padding:48px 0 72px; }
+    .hero h1 { font-size:2.25rem; margin-bottom:18px; }
+    .hero p.lead-text { font-size:1.05rem; margin-bottom:26px; }
+    .hero-ctas { margin-bottom:22px; }
+    .hero-ctas .btn, .hero-ctas .btn-outline { width:100%; }
+    .score-card { left:-8px; bottom:-20px; width:200px; }
+    .flag-card { right:-6px; }
+    .book-wrap { padding:44px 24px; border-radius:20px; }
+    .guarantee { flex-direction:column; gap:10px; }
+    .sticky-cta { display:flex; }
+    footer { padding-bottom:104px; }
+  }
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
 <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Get Your Winnipeg Web Works Project Funded Instantly – Pay with ETH on Sepolia</h1>
-        <p>Skip the banks, skip the fees. Lock in your web development, SEO, and maintenance package with a single crypto transaction.</p>
-        <button id="ethBtn" class="btn">Pay 0.05 ETH Now</button>
-        <button id="btcBtn" class="btn btn-secondary">Pay with BTC</button>
-    </section>
-
-    <!-- Invoice Amount Display -->
-    <section class="amount" id="amountSection">
-        <p>Exact invoice amount: <span id="ethAmount">0.05000000 ETH</span> (~ $90.00 USD)</p>
-    </section>
-
-    <!-- Spinner and status -->
-    <div id="spinner" class="spinner"></div>
-    <p id="statusMsg" class="hidden"></p>
-
-    <!-- JSON Output -->
-    <pre id="output"></pre>
+  <header class="site" id="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="Winnipeg Web Works — home"><span class="mark" aria-hidden="true">W</span>Winnipeg <em>Web</em> Works</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#audit">The Audit</a>
+        <a href="#what-we-do">What We Do</a>
+        <a href="#work-with-us">Engagements</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-sm" href="#book">Book Free Audit</a>
+    </div>
+  </header>
 </div>
 
+<main id="main">
+<div class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="badge"><span class="dot" aria-hidden="true"></span> Winnipeg-owned &middot; free, no-obligation audit</div>
+        <h1>Your website is <em>losing you customers.</em> We&rsquo;ll show you exactly where.</h1>
+        <p class="lead-text">Winnipeg Web Works is a local studio for businesses that can&rsquo;t afford to look cheap online. We audit your entire digital presence, then build the fast, credible web presence your prices deserve — and we prove it upfront with a free audit, before you spend a dollar.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#book">Get My Free 15-Min Audit</a>
+          <button class="btn-outline" id="talk-ai-btn" type="button">Talk to our AI now</button>
+        </div>
+        <div class="trust-row">
+          <div class="item"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> No cost, no card required</div>
+          <div class="item"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Written report in 24 hours</div>
+          <div class="item"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Local, real humans</div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="flag-card"><span class="x">&#10005;</span> 3 issues found</div>
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="dot2"></div><div class="dot2"></div><div class="dot2"></div>
+            <div class="url">yourbusiness.ca</div>
+          </div>
+          <div class="browser-body">
+            <div class="fake-line" style="width:60%;height:17px;margin-bottom:18px;"></div>
+            <div class="fake-line" style="width:92%;"></div>
+            <div class="fake-line" style="width:80%;"></div>
+            <div class="fake-line" style="width:87%;margin-bottom:20px;"></div>
+            <div class="fake-line" style="width:40%;height:34px;border-radius:9px;background:#f6ecd7;"></div>
+          </div>
+        </div>
+        <div class="score-card">
+          <div class="score-ring" id="score-ring"><div class="inner"><span id="score-num">0</span><span style="font-size:.55rem;">/100</span></div></div>
+          <div class="label">Mobile Speed Score</div>
+          <div class="finding">Losing ~40% of mobile visitors</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="trust-band" aria-label="Audit facts">
+  <div class="container">
+    <div class="row">
+      <div class="stat reveal"><b>15 min</b><span>Screen-share audit call</span></div>
+      <div class="stat reveal reveal-d1"><b>3</b><span>Quick wins shown on the spot</span></div>
+      <div class="stat reveal reveal-d2"><b>24 hrs</b><span>Full written report, yours to keep</span></div>
+      <div class="stat reveal reveal-d3"><b>$0</b><span>No cost, no card, no obligation</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="block" id="audit">
+  <div class="container">
+    <div class="eyebrow reveal">The free audit</div>
+    <h2 class="reveal">Exactly what you walk away with</h2>
+    <p class="sub reveal">No vague advice, no sales deck disguised as a report. Three concrete deliverables — free whether or not we ever work together again.</p>
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <div class="num">01</div>
+        <h3>A live look at your leaks</h3>
+        <p>A 15-minute screen-share where we open your site, your ads, and your Google presence and show you — with your real numbers on screen — where customers are dropping off.</p>
+      </div>
+      <div class="proof-card reveal reveal-d1">
+        <div class="num">02</div>
+        <h3>Three quick wins, on the spot</h3>
+        <p>Before the call ends, you get three specific fixes you can make this week — no jargon, no upsell attached. Most owners act on at least one the same day.</p>
+      </div>
+      <div class="proof-card reveal reveal-d2">
+        <div class="num">03</div>
+        <h3>A written report in 24 hours</h3>
+        <p>The full audit in writing: every finding ranked by revenue impact, with what to fix first. It&rsquo;s yours to keep — hand it to any developer you like.</p>
+      </div>
+    </div>
+    <div class="guarantee reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+      <p><strong>Our standing offer:</strong> if the audit doesn&rsquo;t show you at least one leak worth real money, we&rsquo;ll tell you your presence is solid and part as friends. We only take on work we&rsquo;re confident pays for itself.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block explainer" id="what-we-do">
+  <div class="container">
+    <div class="eyebrow reveal">What Winnipeg Web Works actually is</div>
+    <h2 class="reveal">A local studio that builds your presence — and keeps it credible</h2>
+    <p class="sub reveal">Not just a designer, not just an ads agency. One local team for your whole online presence, starting with an honest, free look at what&rsquo;s actually happening today.</p>
+    <div class="explain-grid reveal">
+      <div class="explain-col">
+        <div class="step-n">1</div>
+        <h3>We audit, free</h3>
+        <p>A 15-minute call where we show you your site&rsquo;s real speed, mobile experience, and Google visibility — with specifics, not vague advice.</p>
+      </div>
+      <div class="explain-col">
+        <div class="step-n">2</div>
+        <h3>We build, if it&rsquo;s a fit</h3>
+        <p>A fast, credible website built to fix exactly what the audit found — real strategy and copywriting, not a generic template.</p>
+      </div>
+      <div class="explain-col">
+        <div class="step-n">3</div>
+        <h3>We keep you visible</h3>
+        <p>Ongoing SEO, social, and ad management so the traffic and leads don&rsquo;t dry up the month after launch, the way they do with a &ldquo;set and forget&rdquo; site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="eyebrow reveal">The free audit covers</div>
+    <h2 class="reveal">Three places businesses leak customers every day</h2>
+    <p class="sub reveal">This is the same audit whether you ever hire us again or not — it&rsquo;s yours to keep.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+        <h3>Your Website</h3>
+        <p>Slow load times, broken mobile layouts, dead ends, and confusing calls-to-action that send customers to your competitors instead. First impressions are formed in under a second — we measure yours.</p>
+      </div>
+      <div class="card reveal reveal-d1">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l18-7-7 18-3-8-8-3z"/></svg></div>
+        <h3>Your Ads</h3>
+        <p>Wasted spend, wrong keywords, and campaigns nobody&rsquo;s watching. Most local businesses burn 30%+ of their ad budget without knowing it.</p>
+      </div>
+      <div class="card reveal reveal-d2">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Your Visibility</h3>
+        <p>Google rankings, reviews, and listings. If you don&rsquo;t show up when someone searches &ldquo;near me,&rdquo; that customer never knew you existed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block roi">
+  <div class="container">
+    <div class="eyebrow reveal">Why it&rsquo;s worth paying for</div>
+    <h2 class="reveal">What a leaky website actually costs you</h2>
+    <p class="sub reveal">This is the math we walk through on every audit call — swap in your own numbers and it usually gets worse, not better.</p>
+    <div class="roi-grid">
+      <div class="roi-copy reveal">
+        <h3>A slow, unconvincing site isn&rsquo;t a cosmetic problem. It&rsquo;s lost revenue, every single month.</h3>
+        <p>High-value clients research before they call. If your site loads slowly, looks dated, or buries the proof, they move on to the competitor whose site matches their prices — before you ever knew they were shopping.</p>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> A rebuilt presence typically pays for itself inside 2&ndash;4 months once the leak is fixed.</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Ongoing SEO and visibility work compounds — month 6 costs the same as month 1 but brings in more.</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> We only take engagements we&rsquo;re confident pay for themselves — the audit is how we both find out.</li>
+        </ul>
+      </div>
+      <div class="roi-math reveal reveal-d1">
+        <div class="roi-row"><span>Monthly visitors to a typical local site</span><span class="val">~1,000</span></div>
+        <div class="roi-row"><span>Lost to slow load / weak credibility (avg. 35%)</span><span class="val">&minus;350</span></div>
+        <div class="roi-row"><span>Of those lost, would&rsquo;ve become clients (2%)</span><span class="val">~7&thinsp;/mo.</span></div>
+        <div class="roi-row"><span>Average client value (varies by business)</span><span class="val">$2,000&ndash;$10,000+</span></div>
+        <div class="roi-row total"><span>Potential monthly revenue left on the table</span><span class="val">$14,000&ndash;$70,000+</span></div>
+      </div>
+    </div>
+    <p class="roi-note reveal">Illustrative math for a high-value local business — your audit call walks through your real numbers.</p>
+  </div>
+</section>
+
+<section class="block alt" id="how">
+  <div class="container">
+    <div class="eyebrow reveal">Process</div>
+    <h2 class="reveal">How it works</h2>
+    <p class="sub reveal">From request to answers in under 48 hours.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3>Request your audit</h3>
+        <p>Drop your name and email below. We reply within one business day to book your 15-minute call.</p>
+      </div>
+      <div class="step reveal reveal-d1">
+        <div class="num">2</div>
+        <h3>Live audit call</h3>
+        <p>We screen-share and show you 3 quick wins on the spot — specific to your site, not generic tips.</p>
+      </div>
+      <div class="step reveal reveal-d2">
+        <div class="num">3</div>
+        <h3>Get your report</h3>
+        <p>Full written audit within 24 hours. Yours to keep, either way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="work-with-us">
+  <div class="container">
+    <div class="eyebrow reveal">If you want to fix what we find</div>
+    <h2 class="reveal">After your audit</h2>
+    <p class="sub reveal">The audit is free and always will be. Engagements start at $10,000 — scoped precisely to what the audit turns up.</p>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <h3>The Digital Facelift</h3>
+        <div class="from">From</div>
+        <div class="price">$10,000</div>
+        <p class="desc">Already have a site or an internal tool that works? Keep everything it does — we rebuild the front end so it looks like a business worth paying more. Same features, same backend, new presence.</p>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Visual redesign, same functionality</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Dashboards &amp; admin tools polished too</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Weeks, not months — no rebuild needed</li>
+        </ul>
+        <a class="btn-outline" style="color:var(--ink);border-color:var(--ink);" href="#book">Start with the audit</a>
+      </div>
+      <div class="price-card feat reveal reveal-d1">
+        <div class="tag">Most chosen</div>
+        <h3>Signature Website</h3>
+        <div class="from">From</div>
+        <div class="price">$10,000</div>
+        <p class="desc">A fast, credible, mobile-first website built around the exact leaks your audit found — strategy, copy, design, and build, done properly.</p>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Built to fix your audit findings</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Copy &amp; design matched to your prices</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Fast, mobile-first, yours outright</li>
+        </ul>
+        <a class="btn" href="#book">Start with the audit</a>
+      </div>
+      <div class="price-card reveal reveal-d2">
+        <h3>Credibility Partnership</h3>
+        <div class="from">Scoped after your audit</div>
+        <div class="price">Custom</div>
+        <p class="desc">Website plus ongoing SEO, content, social, and ad management — one partner keeping you visible and credible month after month.</p>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Everything in Signature Website</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Ongoing SEO, social &amp; ads</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> One partner, one bill, no gaps</li>
+        </ul>
+        <a class="btn-outline" style="color:var(--ink);border-color:var(--ink);" href="#book">Start with the audit</a>
+      </div>
+    </div>
+    <p class="sub reveal" style="margin-top:40px;margin-bottom:0;">Every relationship starts with the free audit — real pricing depends on what it turns up. <a href="#book" style="color:var(--gold-deep);font-weight:700;">Book yours</a> to find out what fits.</p>
+  </div>
+</section>
+
+<section class="block alt" id="faq">
+  <div class="container">
+    <div class="eyebrow reveal">FAQ</div>
+    <h2 class="reveal">Common questions</h2>
+    <p class="sub reveal">Straight answers, no fine print.</p>
+    <div class="faq reveal">
+      <details class="faq-item" open>
+        <summary>What does Winnipeg Web Works actually do?<span class="plus" aria-hidden="true">+</span></summary>
+        <p class="answer">We build and fix websites, and run the ongoing marketing (SEO, social, ads) that keeps a business showing up online. We start every relationship with a free audit so you see exactly what&rsquo;s broken before you spend anything.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the audit actually free?<span class="plus" aria-hidden="true">+</span></summary>
+        <p class="answer">Yes. No cost and no card required. The 15-minute call and the written report are free, whether or not you ever work with us again.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What do engagements cost?<span class="plus" aria-hidden="true">+</span></summary>
+        <p class="answer">Paid engagements start at $10,000. The exact scope and price are set after your free audit, based on what it turns up — so you only ever pay to fix real, measured leaks.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to sign anything or give payment info for the audit?<span class="plus" aria-hidden="true">+</span></summary>
+        <p class="answer">No. Just your name and email to book the call. No contract, no card.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What exactly do you look at?<span class="plus" aria-hidden="true">+</span></summary>
+        <p class="answer">Your website (speed, mobile experience, dead ends), your ads if you&rsquo;re running any (wasted spend, wrong targeting), and your Google visibility (search ranking, reviews, and whether you show up for &ldquo;near me&rdquo; searches).</p>
+      </details>
+      <details class="faq-item">
+        <summary>What&rsquo;s the Digital Facelift, and how&rsquo;s it different from a full rebuild?<span class="plus" aria-hidden="true">+</span></summary>
+        <p class="answer">Some sites (and internal tools like dashboards or admin panels) work fine — they just look unfinished, and that costs you trust before a customer reads a word. The Facelift is a visual overhaul: same pages, same features, same backend, rebuilt to look like a business people want to pay more. If your audit turns up real functional problems, we&rsquo;ll tell you honestly and point you at the Signature Website instead.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="book">
+  <div class="container cta-final">
+    <div class="book-wrap reveal">
+      <div class="eyebrow" style="color:#e8c877;">Limited slots</div>
+      <h2>Request your free audit</h2>
+      <p class="sub">Only a handful of audit slots open each week. Grab yours.</p>
+      <form class="lead" id="lead-form" action="https://formsubmit.co/ajax/e25d7255fffba0a90edb046c4094d90a" method="POST" novalidate>
+        <div class="field">
+          <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="f-name" name="name" placeholder="Jane Smith" required autocomplete="name" maxlength="80" aria-describedby="err-name">
+          <p class="field-err" id="err-name" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email address <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="f-email" name="email" placeholder="jane@company.ca" required autocomplete="email" maxlength="120" aria-describedby="err-email">
+          <p class="field-err" id="err-email" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="f-company">Business name <span style="color:#8a8779;font-weight:400;">(optional)</span></label>
+          <input type="text" id="f-company" name="company" placeholder="Smith &amp; Co." autocomplete="organization" maxlength="120">
+        </div>
+        <div class="field">
+          <label for="f-website">Your website <span style="color:#8a8779;font-weight:400;">(optional)</span></label>
+          <input type="url" id="f-website" name="website" placeholder="yourbusiness.ca" autocomplete="url" maxlength="200" inputmode="url" aria-describedby="err-website">
+          <p class="field-err" id="err-website" role="alert"></p>
+        </div>
+        <input type="hidden" name="_subject" value="New audit request — Winnipeg Web Works">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit" id="lead-submit">Request My Free Audit</button>
+      </form>
+      <p class="form-note">No cost, no card, no obligation. We reply within one business day.</p>
+      <div id="form-msg" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-logo">Winnipeg Web Works</div>
+    &copy; <span id="year">2026</span> Winnipeg Web Works &middot; Winnipeg, Manitoba &middot; <a href="mailto:winnipegwebworks@gmail.com">winnipegwebworks@gmail.com</a>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <span>Free 15-min audit, no cost</span>
+  <a class="btn" href="#book">Book now</a>
+</div>
+
+<!-- ElevenLabs Conversational AI widget — free live audit chat/voice -->
+<elevenlabs-convai agent-id="agent_4801m3a3kqw1e7dswfbhrw252fmd"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 <script>
-    const RECIPIENT_ADDRESS = '0xCc0E51687D9EbF034a3bDfBA4c859B0C78B23b06';
-    const ETH_AMOUNT = '0.05';
-    const BTC_AMOUNT = '0.0015'; // approximate BTC for same $ value
-    const ETH_USD_RATE = 1800; // fixed for display
-    const ethAmountUsd = (parseFloat(ETH_AMOUNT) * ETH_USD_RATE).toFixed(2);
-    document.getElementById('ethAmount').textContent = ETH_AMOUNT + ' ETH';
-    // If you want to show BTC amount similarly, could add another line.
+(function () {
+  "use strict";
 
-    async function createInvoice(endpoint, amount, currency, network) {
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({amountEth: amount, currency, network})
-        });
-        if (!response.ok) throw new Error(`Invoice creation failed: ${response.status}`);
-        return await response.json(); // expecting { id: '...' }
-    }
+  /* ---------- Sticky header ---------- */
+  var header = document.getElementById("site-header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-    async function pollVerification(endpoint, id, intervalMs = 2000, timeoutMs = 180000) {
-        const end = Date.now() + timeoutMs;
-        while (Date.now() < end) {
-            const resp = await fetch(endpoint.replace('{id}', id));
-            if (!resp.ok) throw new Error(`Polling failed: ${resp.status}`);
-            const data = await resp.json();
-            if (data.status === 'paid') return data;
-            await new Promise(r => setTimeout(r, intervalMs));
-        }
-        throw new Error('Polling timeout');
-    }
+  /* ---------- Reveal-on-scroll ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
 
-    function showSpinner(show) {
-        document.getElementById('spinner').style.display = show ? 'block' : 'none';
+  /* ---------- Animated hero score ring ---------- */
+  var ring = document.getElementById("score-ring");
+  var scoreNum = document.getElementById("score-num");
+  var SCORE_TARGET = 37, DURATION = 1400;
+  function animateScore() {
+    var start = null;
+    function frame(ts) {
+      if (!start) start = ts;
+      var t = Math.min((ts - start) / DURATION, 1);
+      var eased = 1 - Math.pow(1 - t, 3);
+      var val = Math.round(SCORE_TARGET * eased);
+      scoreNum.textContent = val;
+      ring.style.setProperty("--p", (val / 100).toFixed(3));
+      if (t < 1) requestAnimationFrame(frame);
     }
-    function setStatus(msg, error = false) {
-        const el = document.getElementById('statusMsg');
-        el.textContent = msg;
-        el.className = error ? 'error' : '';
-        el.classList.remove('hidden');
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scoreNum.textContent = SCORE_TARGET;
+      ring.style.setProperty("--p", "0.37");
+    } else {
+      requestAnimationFrame(frame);
     }
-    function hideStatus() {
-        document.getElementById('statusMsg').classList.add('hidden');
-    }
-    function showOutput(jsonObj) {
-        const out = document.getElementById('output');
-        out.textContent = JSON.stringify(jsonObj, null, 2);
-        out.style.display = 'block';
-        console.log('Payment successful, output JSON:', jsonObj);
-    }
+  }
+  if ("IntersectionObserver" in window && ring) {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { animateScore(); rio.disconnect(); } });
+    }, { threshold: 0.4 });
+    rio.observe(ring);
+  }
 
-    document.getElementById('ethBtn').addEventListener('click', async () => {
-        showSpinner(true);
-        setStatus('Creating ETH invoice...');
-        try {
-            const invoice = await createInvoice('/api/payments/invoice', ETH_AMOUNT, 'ETH', 'sepolia');
-            setStatus(`Invoice created. Waiting for payment...`);
-            const result = await pollVerification(`/api/payments/invoice/${invoice.id}/verify`);
-            showSpinner(false);
-            setStatus(`Payment confirmed! Tx hash: ${result.txHash}`);
-            const jsonOutput = {
-                type: 'invoice',
-                method: 'ETH',
-                priceModel: 'fixed',
-                priceEth: ETH_AMOUNT,
-                firstDollarPlan: 'Basic Winnipeg Web Works Package',
-                needs: ['website', 'seo', 'maintenance']
-            };
-            showOutput(jsonOutput);
-        } catch (err) {
-            showSpinner(false);
-            setStatus(`Error: ${err.message}`, true);
-            console.error(err);
-        }
+  /* ---------- "Talk to our AI" with graceful fallback ---------- */
+  document.getElementById("talk-ai-btn").addEventListener("click", function () {
+    var widget = document.querySelector("elevenlabs-convai");
+    try {
+      if (widget && typeof widget.startCall === "function") { widget.startCall(); return; }
+      if (widget) { widget.setAttribute("override-open", "true"); widget.click(); return; }
+    } catch (err) { /* fall through to booking form */ }
+    // Conversational AI widget unavailable (blocked CDN or ad-blocker) —
+    // degrade gracefully to the booking form instead of a dead button.
+    document.getElementById("book").scrollIntoView({ behavior: "smooth" });
+  });
+
+  /* ---------- Footer year ---------- */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- Lead form: validation + spam traps + AJAX submit ---------- */
+  var form = document.getElementById("lead-form");
+  var msg = document.getElementById("form-msg");
+  var submitBtn = document.getElementById("lead-submit");
+  var formLoadedAt = Date.now();
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function setErr(inputId, errId, text) {
+    var input = document.getElementById(inputId);
+    var err = document.getElementById(errId);
+    if (text) {
+      input.setAttribute("aria-invalid", "true");
+      err.textContent = text;
+      err.classList.add("show");
+    } else {
+      input.removeAttribute("aria-invalid");
+      err.textContent = "";
+      err.classList.remove("show");
+    }
+  }
+
+  function normalizeWebsite(raw) {
+    var v = raw.trim();
+    if (!v) return "";
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(v)) v = "https://" + v;
+    try {
+      var u = new URL(v);
+      if (u.protocol !== "http:" && u.protocol !== "https:") return null;
+      return u.href;
+    } catch (e) { return null; }
+  }
+
+  function validate() {
+    var ok = true;
+    var name = document.getElementById("f-name").value.trim();
+    var email = document.getElementById("f-email").value.trim();
+    var websiteRaw = document.getElementById("f-website").value;
+
+    if (name.length < 2) { setErr("f-name", "err-name", "Please enter your name (at least 2 characters)."); ok = false; }
+    else if (name.length > 80) { setErr("f-name", "err-name", "Please keep your name under 80 characters."); ok = false; }
+    else setErr("f-name", "err-name", "");
+
+    if (!EMAIL_RE.test(email)) { setErr("f-email", "err-email", "Please enter a valid email address."); ok = false; }
+    else setErr("f-email", "err-email", "");
+
+    if (websiteRaw.trim() && normalizeWebsite(websiteRaw) === null) {
+      setErr("f-website", "err-website", "That website address doesn\u2019t look valid — e.g. yourbusiness.ca"); ok = false;
+    } else setErr("f-website", "err-website", "");
+
+    return ok;
+  }
+
+  ["f-name", "f-email", "f-website"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", function () {
+      var map = { "f-name": "err-name", "f-email": "err-email", "f-website": "err-website" };
+      setErr(id, map[id], "");
     });
+  });
 
-    document.getElementById('btcBtn').addEventListener('click', async () => {
-        showSpinner(true);
-        setStatus('Creating BTC invoice...');
-        try {
-            const invoice = await createInvoice('/api/payments/btc-invoice', BTC_AMOUNT, 'BTC', 'testnet'); // assuming testnet
-            setStatus(`Invoice created. Waiting for payment...`);
-            const result = await pollVerification(`/api/payments/btc-invoice/${invoice.id}/verify`);
-            showSpinner(false);
-            setStatus(`Payment confirmed! Tx hash: ${result.txHash}`);
-            const jsonOutput = {
-                type: 'invoice',
-                method: 'BTC',
-                priceModel: 'fixed',
-                priceBtc: BTC_AMOUNT, // optional field
-                firstDollarPlan: 'Basic Winnipeg Web Works Package',
-                needs: ['website', 'seo', 'maintenance']
-            };
-            showOutput(jsonOutput);
-        } catch (err) {
-            showSpinner(false);
-            setStatus(`Error: ${err.message}`, true);
-            console.error(err);
-        }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    msg.className = ""; msg.textContent = "";
+
+    // Honeypot: bots fill hidden fields; humans never do.
+    if (form._honey.value) { return; }
+
+    // Speed trap: submitted implausibly fast for a human.
+    if (Date.now() - formLoadedAt < 2500) {
+      msg.className = "err";
+      msg.textContent = "Please take a moment to fill in the form, then try again.";
+      return;
+    }
+
+    if (!validate()) {
+      var firstBad = form.querySelector('[aria-invalid="true"]');
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    var website = normalizeWebsite(document.getElementById("f-website").value);
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending\u2026";
+
+    fetch(form.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        name: document.getElementById("f-name").value.trim(),
+        email: document.getElementById("f-email").value.trim(),
+        company: document.getElementById("f-company").value.trim(),
+        website: website,
+        _subject: form._subject.value,
+        _template: "table",
+        _honey: form._honey.value
+      })
+    }).then(function (res) {
+      if (!res.ok) throw new Error("Request failed: " + res.status);
+      return res.json();
+    }).then(function () {
+      msg.className = "ok";
+      msg.textContent = "\u2713 Got it! We\u2019ll email you within one business day to book your audit call.";
+      form.reset();
+    }).catch(function () {
+      msg.className = "err";
+      msg.innerHTML = "Something went wrong sending the form — please email <a href=\"mailto:winnipegwebworks@gmail.com\">winnipegwebworks@gmail.com</a> directly and we\u2019ll get you booked.";
+    }).finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Request My Free Audit";
     });
+  });
+})();
 </script>
+
 </body>
 </html>
