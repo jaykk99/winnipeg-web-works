@@ -1,6 +1,7 @@
 # Winnipeg Web Works
 
-Live: **https://winnipeg-web-works.vercel.app/**
+Live: **TBD (redeploying off paused Vercel)**
+Backup: https://winnipeg-web-works.vercel.app/
 
 Single-page static marketing site for Winnipeg Web Works — a digital-credibility studio for Winnipeg businesses ("We Find Where Your Website Is Losing You Customers"). Free 15-minute audit lead-gen; paid engagements from $10,000.
 
