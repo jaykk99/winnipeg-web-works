@@ -8,6 +8,8 @@ Single-page static marketing site for Winnipeg Web Works — a digital-credibili
 ## What's on the site
 
 - `index.html` — the entire site (markup, styles, JS in one file)
+- `audit-tool.html` — interactive 3-minute self-audit (15 questions, 5 dimensions, instant scored report, zero tracking)
+- `blog/` — Field Notes: SEO content hub (`index.html` + `style.css` + 3 articles: website leaks, Winnipeg local SEO, what an audit is)
 - `og-image.png` — social share preview image (1200×630, brand-matched ink + gold)
 - `favicon.svg`, `apple-touch-icon.png` — site icons
 - `audit-report-template.md` — template used for delivered audits
