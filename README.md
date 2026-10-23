@@ -1,6 +1,6 @@
 # Winnipeg Web Works
 
-Live: **https://jaykk99.github.io/winnipeg-web-works/** (GitHub Pages)
+Live: **https://winnipeg-web-works.onrender.com/** (GitHub Pages)
 Old: https://winnipeg-web-works.vercel.app/ (paused)
 
 Single-page static marketing site for Winnipeg Web Works — a digital-credibility studio for Winnipeg businesses ("We Find Where Your Website Is Losing You Customers"). Free 15-minute audit lead-gen; paid engagements from $10,000.
@@ -23,7 +23,7 @@ Luxury rebrand (2026-09-30): deep ink + champagne gold palette, Fraunces display
 ## Deploy
 
 Static site — no build step, no dependencies, no environment variables.
-Hosted on GitHub Pages at https://jaykk99.github.io/winnipeg-web-works/ — push
+Hosted on GitHub Pages at https://winnipeg-web-works.onrender.com/ — push
 to `main` and Pages redeploys automatically. The old Vercel deployment is
 paused.
 
