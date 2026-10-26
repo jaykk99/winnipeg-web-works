@@ -17,6 +17,7 @@ Reply with a couple of times that work for you this week, and I'll confirm.
 Talk soon,
 Jay
 Winnipeg Web Works
+Call or text 204-972-0325
 https://winnipeg-web-works.vercel.app
 
 ---
@@ -32,6 +33,7 @@ I only open a handful each week. If you still want yours, reply with a time and 
 
 Jay
 Winnipeg Web Works
+Call or text 204-972-0325
 
 ---
 
@@ -48,6 +50,7 @@ If you want help fixing the top 3 items, I can get started this week — reply a
 
 Jay
 Winnipeg Web Works
+Call or text 204-972-0325
 
 ---
 
@@ -68,6 +71,7 @@ Based on your audit, here's the fix-it package:
 
 Jay
 Winnipeg Web Works
+Call or text 204-972-0325
 
 ---
 
@@ -84,3 +88,4 @@ If you want to revisit later, you know where to find me.
 
 Jay
 Winnipeg Web Works
+Call or text 204-972-0325
