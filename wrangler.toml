@@ -1,0 +1,11 @@
+# Cloudflare Pages config — Winnipeg Web Works site. PREPARED
+# 2026-10-29, not yet connected. To go live on Cloudflare: Workers &
+# Pages -> Create -> Pages -> Connect to Git -> pick this repo,
+# production branch "main", no build command, output dir ".". That
+# creates winnipeg-web-works.pages.dev as an ADDITIONAL home; it does
+# not change the current live sites (jaykk99.github.io/winnipeg-web-works,
+# winnipeg-web-works.onrender.com). Static content; the lead form posts
+# to its form endpoint, so no database wiring.
+name = "winnipeg-web-works"
+pages_build_output_dir = "."
+compatibility_date = "2026-10-29"
