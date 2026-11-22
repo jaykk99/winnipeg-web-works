@@ -173,6 +173,8 @@
       <h3>Want the real audit?</h3>
       <p>This tool covers what you can see yourself. Our free 15-minute audit goes deeper: live speed tests, real search-ranking checks, ad-spend waste analysis, and a written report with everything ranked by impact. Still free, still no obligation.</p>
       <a class="btn" href="index.html#book">Request your free audit</a>
+      <button class="retake" id="copyReportBtn" type="button">Copy my audit report</button>
+      <span id="copyReportStatus" role="status" aria-live="polite"></span>
       <button class="retake" id="retakeBtn" type="button">Retake the audit</button>
     </div>
   </div>
@@ -378,6 +380,37 @@
     reviews:"Social proof where customers look before they call.",
     market:"Ongoing visibility beyond word of mouth."
   };
+
+  // Export only the visitor's own answers/results; no tracking or server calls.
+  document.getElementById("copyReportBtn").addEventListener("click", async function(){
+    var lines = [
+      "Winnipeg Web Works — website self-audit",
+      "Score: " + document.getElementById("scoreNum").textContent + "/100",
+      "Assessment: " + document.getElementById("verdictTitle").textContent,
+      document.getElementById("verdictCopy").textContent,
+      "",
+      "Dimension scores:"
+    ];
+    document.querySelectorAll("#dimGrid .dim").forEach(function(el){
+      lines.push(el.querySelector(".dim-top").textContent.trim().replace(/\s+/g, " "));
+    });
+    lines.push("", "Recommended next steps:");
+    document.querySelectorAll("#fixList .fix p").forEach(function(el){
+      lines.push("- " + el.textContent.trim());
+    });
+    lines.push("", "Self-reported answers only; this is not a verified technical audit.");
+    lines.push("Free follow-up: https://winnipeg-web-works.onrender.com/#book");
+    var report = lines.join("\n");
+    var status = document.getElementById("copyReportStatus");
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(report);
+      status.textContent = "Report copied. You can paste it into your notes or email.";
+    } catch (err) {
+      // Clipboard permissions vary on HTTP and mobile browsers. Never claim success.
+      status.textContent = "Copy unavailable in this browser. Select the report text on screen instead.";
+    }
+  });
 
   document.getElementById("retakeBtn").addEventListener("click", function(){
     answers = new Array(QUESTIONS.length).fill(null);
