@@ -173,6 +173,8 @@
       <h3>Want the real audit?</h3>
       <p>This tool covers what you can see yourself. Our free 15-minute audit goes deeper: live speed tests, real search-ranking checks, ad-spend waste analysis, and a written report with everything ranked by impact. Still free, still no obligation.</p>
       <a class="btn" href="index.html#book">Request your free audit</a>
+      <button class="btn btn-ghost" id="downloadReport" type="button">Download your results (.txt)</button>
+      <p id="reportStatus" role="status" aria-live="polite"></p>
       <button class="retake" id="retakeBtn" type="button">Retake the audit</button>
     </div>
   </div>
@@ -249,6 +251,7 @@
   var backBtn = document.getElementById("backBtn");
   var skipBtn = document.getElementById("skipBtn");
   var current = 0;
+  var reportText = "";
   var answers = new Array(QUESTIONS.length).fill(null);
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -309,7 +312,7 @@
       max += 2;
       if (answers[i] !== null) { dimScores[item.dim] += answers[i]; total += answers[i]; answered++; }
     });
-    // Unanswered questions score 0 (skipped = unknown = likely leaking)
+    // A skipped answer contributes no confirmed points; the score is a lower bound, not evidence of a defect.
     var pct = Math.round((total / max) * 100);
 
     quizEl.style.display = "none";
@@ -338,6 +341,11 @@
       verdictLine.textContent = "Estimated leak: significant.";
     }
 
+    if (answered < QUESTIONS.length) {
+      verdictTitle.textContent = "Partial self-assessment";
+      verdictCopy.textContent = answered + " of " + QUESTIONS.length + " questions answered. Unanswered items are unknown, not confirmed problems.";
+      verdictLine.textContent = "Score is a lower bound, not a measured revenue loss.";
+    }
     var dimGrid = document.getElementById("dimGrid");
     dimGrid.innerHTML = "";
     var worst = [];
@@ -369,6 +377,24 @@
       div.innerHTML = '<span class="n" style="background:var(--green)">&#10003;</span><p><strong>Nothing urgent.</strong> Your fundamentals are solid. A real audit would hunt the smaller leaks: page speed, search rankings you are not tracking, and any ad waste.</p>';
       fixList.appendChild(div);
     }
+    var lines = ["WINNIPEG WEB WORKS — WEBSITE SELF-ASSESSMENT",
+      "Date: " + new Date().toISOString().slice(0, 10),
+      "Confirmed score: " + pct + "/100; answered " + answered + "/" + QUESTIONS.length,
+      "Based on your answers, not a live technical audit. No revenue loss or search ranking has been measured.",
+      "Unanswered items contribute no points; partial scores are lower bounds.", "", "DIMENSIONS"];
+    worst.forEach(function(w){
+      var count = QUESTIONS.filter(function(q,i){return q.dim === w.d && answers[i] !== null;}).length;
+      lines.push(DIMS[w.d].name + ": " + w.pct + "% confirmed (" + count + "/" + dimCounts[w.d] + " answered)");
+      if (w.pct < 70) lines.push("Suggested next step: " + FIX_ADVICE[w.d]);
+    });
+    lines.push("", "YOUR ANSWERS");
+    QUESTIONS.forEach(function(q,i){
+      var choice = q.a.find(function(a){return a[1] === answers[i];});
+      lines.push((i+1) + ". " + q.q, "   " + (choice ? choice[0] : "Not answered / unknown"));
+    });
+    lines.push("", "Request a free follow-up audit: https://winnipeg-web-works.onrender.com/#book", "No data has been submitted by downloading this report.");
+    reportText = lines.join("\n");
+    document.getElementById("reportStatus").textContent = "";
   }
 
   var DIM_NOTE = {
@@ -379,8 +405,22 @@
     market:"Ongoing visibility beyond word of mouth."
   };
 
+  document.getElementById("downloadReport").addEventListener("click", function(){
+    if (!reportText) return;
+    var url = URL.createObjectURL(new Blob([reportText], {type:"text/plain;charset=utf-8"}));
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "website-self-assessment.txt";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){URL.revokeObjectURL(url);}, 1000);
+    document.getElementById("reportStatus").textContent = "Report prepared for download. Nothing was submitted.";
+  });
   document.getElementById("retakeBtn").addEventListener("click", function(){
     answers = new Array(QUESTIONS.length).fill(null);
+    reportText = "";
+    document.getElementById("reportStatus").textContent = "";
     resultsEl.style.display = "none";
     quizEl.style.display = "block";
     show(0);
